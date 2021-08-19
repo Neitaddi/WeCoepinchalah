@@ -1,0 +1,78 @@
+.BackgroundCbs {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ModalWrapperCbs {
+  width: 800px;
+  height: 450px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border-color: #ea5652;
+  border-style: solid;
+  color: #000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  z-index: 10;
+  border-radius: 10px;
+}
+
+.ModalImgCbs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0%;
+  padding-bottom: 2%;
+  /* line-height: 1.8; */
+  /* color: #141414; */
+  /* border-color: #ea5652;
+    border-style: solid; */
+  /* width: 100%;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    border-color: black;
+    border-style: solid; */
+  /* display: flex; */
+  /* justify-content: center; */
+
+  background: #e76e6a;
+}
+
+.ModalContentCbs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.9;
+  padding-left: 50px;
+  color: #141414;
+  /* border-color: #ea5652;
+    border-style: solid; */
+}
+p {
+  margin-bottom: 1rem;
+}
+/* button {
+  padding: 10px 24px;
+  background: #ea5652;
+  color: #fff;
+  border: none;
+} */
+
+.CloseModalButtonCbs {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  z-index: 10;
+}

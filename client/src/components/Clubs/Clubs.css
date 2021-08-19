@@ -1,0 +1,123 @@
+body {
+  background: #f9f9f9;
+}
+.bgAcceuilCbs {
+  /* align-items: center; */
+  height: 100vh;
+  width: 99.5%;
+}
+.navBarClbs {
+  /* border-color: #555;
+  border-style: solid; */
+  /* margin-top: 40px; */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+  height: 15vh;
+  width: 90%;
+  /* margin-top: px; */
+  margin-left: 60px;
+  border-top-right-radius: 5%;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  background-color: #ffffff;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.tabs {
+  /* border-color: rgb(184, 255, 71);
+  border-style: solid; */
+  margin-top: 50px;
+  height: 75vh;
+  width: 90.9%;
+  margin-left: 60px;
+  /* transform: translate(-50%, -50%); */
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  background-color: #ffffff;
+}
+.tabs > input[type="radio"] {
+  display: none;
+  border-radius: 5px;
+}
+
+.tabs > div {
+  display: none;
+  border: 1px solid #000;
+  padding: 10px 15px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+#tab-btn-1:checked ~ #content-1,
+#tab-btn-2:checked ~ #content-2,
+#tab-btn-3:checked ~ #content-3 {
+  display: block;
+  border-style: none;
+}
+
+/* .........................navTabClubs......................... */
+
+.tabs > label {
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  user-select: none;
+  /* background-color: #f5f5f5;
+  border: 1px solid #ffff; */
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  cursor: pointer;
+  /* position: relative; */
+  top: 1px;
+  border-radius: 5px;
+  margin-left: 7px;
+  color: rgba(83, 83, 83, 0.74);
+  padding: 8px 250px 8px 250px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+.tabs > label:not(:first-of-type) {
+  border-left: none;
+}
+
+.tabs > input[type="radio"]:checked + label {
+  background-color: #fff;
+  padding: 4px 270px 4px 270px;
+  color: #fb544e;
+  border-radius: 5px;
+  /* padding: 3px 250px 3px 250px; */
+  box-shadow: #fb544e 0px 0.0625em 0.0625em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}
+
+.logoSite {
+  /* border-color: rgb(184, 255, 71);
+  border-style: solid; */
+  padding-left: 0px;
+  padding-top: 0px;
+}
+.createClub {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  margin-left: 500px;
+}
+.createClub:hover {
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  margin-left: 500px;
+  cursor: pointer;
+}

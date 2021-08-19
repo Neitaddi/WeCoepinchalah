@@ -1,0 +1,50 @@
+.error {
+  color: red;
+  font-size: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.logo {
+  padding-bottom: 10px;
+  padding-left: 40px;
+}
+
+.im {
+  padding-left: 0;
+}
+input {
+  border-style: solid;
+  border-radius: 10px;
+  border-color: #fb544e;
+  padding: 3px 20px 3px 20px;
+  border-width: 1.5px;
+}
+button {
+  margin-top: 0;
+  margin-left: 50px;
+}
+button:hover {
+  margin-top: 0;
+  margin-left: 50px;
+  cursor: pointer;
+}
+label {
+  font-size: 10px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  padding-left: 0;
+  margin-left: 0;
+}
+.check {
+  margin-left: 0;
+}
+
+.loginReginter {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.success {
+  margin-right: 30px;
+  font-size: 12px;
+}

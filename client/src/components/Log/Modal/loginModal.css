@@ -1,0 +1,143 @@
+/* .Background {
+  width: 100%;
+  height: 100%;
+  background: rgba(177, 177, 177, 0.13);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ModalWrapper {
+  width: 800px;
+  height: 500px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  color: tomato;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  z-index: 10;
+  border-radius: 10px;
+  border-color: black;
+}
+
+.ModalImg {
+  width: 130%;
+  height: 100%;
+  padding-left: 20%;
+  border-radius: 10px 0 0 10px;
+  border-color: black;
+}
+.ModalContent {
+  display: flex;
+  justify-content: space-between;
+  border-color: black;
+  align-items: center;
+}
+
+.Form p,
+button {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  line-height: 1.8;
+  color: #141414;
+
+  margin-bottom: 1rem;
+
+  padding: 10px 10px;
+  background: #141414;
+  color: #fff;
+}
+
+.CloseModalButton {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  z-index: 10;
+} */
+
+.Background {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ModalWrapper {
+  width: 800px;
+  height: 450px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border-color: #ea5652;
+  border-style: solid;
+  color: #000;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  position: relative;
+  z-index: 10;
+  border-radius: 10px;
+}
+
+.ModalImg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 0%;
+  padding-bottom: 2%;
+  /* line-height: 1.8; */
+  /* color: #141414; */
+  /* border-color: #ea5652;
+  border-style: solid; */
+  /* width: 100%;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+  border-color: black;
+  border-style: solid; */
+  /* display: flex; */
+  /* justify-content: center; */
+
+  background: #e76e6a;
+}
+
+.ModalContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  line-height: 1.9;
+  padding-left: 50px;
+  color: #141414;
+  /* border-color: #ea5652;
+  border-style: solid; */
+}
+p {
+  margin-bottom: 1rem;
+}
+button {
+  padding: 10px 24px;
+  background: #ea5652;
+  color: #fff;
+  border: none;
+}
+
+.CloseModalButton {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  z-index: 10;
+}
