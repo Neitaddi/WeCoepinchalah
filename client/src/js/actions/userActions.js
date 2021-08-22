@@ -1,5 +1,5 @@
 import axios from "axios";
-import { GET_USER } from "../constatnts/userActionTypes";
+import { GET_USER, UPLOAD_PICTURE } from "../constatnts/userActionTypes";
 //get user
 export const getUser = (uid) => {
   return (dispatch) => {
@@ -7,6 +7,25 @@ export const getUser = (uid) => {
       .get(`${process.env.REACT_APP_API_URL}api/user/${uid}`)
       .then((res) => {
         dispatch({ type: GET_USER, payload: res.data });
+      })
+      .catch((err) => console.log(err));
+  };
+};
+
+export const uploadPicture = (data, id) => {
+  return (dispatch) => {
+    return axios
+      .post(`${process.env.REACT_APP_API_URL}api/user/upload`, data)
+      .then((res) => {
+        // if (res.data.errors) {
+        //   dispatch({ type: GET_USER_ERRORS, payload: res.data.errors });
+        // } else {
+        //   dispatch({ type: GET_USER_ERRORS, payload: "" });
+        return axios
+          .get(`${process.env.REACT_APP_API_URL}api/user/${id}`)
+          .then((res) => {
+            dispatch({ type: UPLOAD_PICTURE, payload: res.data.picture });
+          });
       })
       .catch((err) => console.log(err));
   };

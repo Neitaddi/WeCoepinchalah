@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url(https://allfont.net/allfont.css?fonts=pragmatica-cyrillic);
+body {
+  font-family: "Pragmatica Cyrillic", arial;
+}
 .bgAcceuil {
   display: flex;
   justify-content: space-between;
@@ -37,8 +40,9 @@
   width: 26%;
   min-width: 50px;
   border-top-left-radius: 5%;
-  /* border-style: solid; */
-  /* border-color: #fb544e; */
+
+  /* border-style: solid;
+  border-color: #fb544e; */
   box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
     rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
     rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
@@ -51,7 +55,9 @@
 
 .Container {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-around;
+
   align-items: center;
   height: 100vh;
 }
@@ -77,11 +83,12 @@
   height: 10vh;
   width: 90%;
   /* border-style: solid; */
+  margin-bottom: 30px;
 }
 .SearchClub {
   height: 80vh;
   width: 90%;
-  border-style: solid;
+  /* border-style: solid; */
 }
 .b1 {
   border-color: #fb544e;
@@ -146,4 +153,57 @@
   align-content: center;
   align-items: center;
   /* min-height: 100vh; */
+}
+.loginNav {
+  display: flex;
+  padding-left: 15px;
+  align-items: center;
+
+  /* border-style: solid; */
+}
+.loginName {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.loginName :hover {
+  border-radius: 20px;
+  background-color: #e0dfdf9f;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.userNameAcc {
+  color: #000000;
+  display: flex;
+
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 15px;
+}
+.userLastNameHome {
+  padding-right: 5px;
+}
+.userNameHome {
+  padding-right: 20px;
+}
+
+.circular--userPc {
+  border-radius: 50%;
+  width: 40px;
+  height: 45px;
+  border-style: solid;
+  border-color: #c9c8c8;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+  margin-right: 5px;
+}
+.navHomeProfil :focus,
+:hover,
+:visited,
+:link,
+:active {
+  text-decoration: none;
 }

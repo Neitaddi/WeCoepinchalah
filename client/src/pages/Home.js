@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import LoginModal from "../components/Log/Modal/loginModal";
 import { SignUpModal } from "../components/Log/Modal/registerModal";
 import SideBar from "../components/SideBar/sideBar";
 // import { ProgressBar } from "../components/progressBar/progressbar";
-
+import { useSelector } from "react-redux";
 import { FaRegUserCircle } from "react-icons/fa";
 import "./Home.css";
 import { UidContext } from "../components/AppContext";
@@ -15,6 +15,7 @@ import rootReducers from "../js/reducers";
 
 function Home() {
   const uid = useContext(UidContext);
+  const userData = useSelector((state) => state.userReducer);
   //useState login
   const [showLoginModal, setShowLoginModal] = useState(false);
   //reff openLoginModal
@@ -87,8 +88,29 @@ function Home() {
           <div className="Container">
             <div className="Auth">
               {uid ? (
-                <div>
+                <div className="loginNav">
                   {" "}
+                  <NavLink className="navHomeProfil" to="/profil">
+                    <div className="loginName">
+                      {" "}
+                      <div>
+                        <img
+                          class="circular--userPc"
+                          src={userData.userPicture}
+                          alt="user-pic"
+                        />
+                      </div>
+                      <div className="userNameAcc">
+                        <div className="userLastNameHome">
+                          {userData.userLastName}
+                        </div>
+                        <div className="userNameHome">
+                          {" "}
+                          {userData.userName}{" "}
+                        </div>
+                      </div>
+                    </div>
+                  </NavLink>
                   <LogOut />
                 </div>
               ) : (
