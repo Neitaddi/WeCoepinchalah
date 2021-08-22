@@ -1,0 +1,8 @@
+.logoutIcon {
+  cursor: pointer;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  z-index: 10;
+}

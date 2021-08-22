@@ -1,9 +1,10 @@
 import React from "react";
-
+import FormRegisterModelClub from "../components/Clubs/Log/formRegisterModelClub";
+import "./Trending.css";
 const Trending = () => {
   return (
-    <div>
-      <h1>trending</h1>
+    <div class="form_wrapper">
+      <FormRegisterModelClub />
     </div>
   );
 };

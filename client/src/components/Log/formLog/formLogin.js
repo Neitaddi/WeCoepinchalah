@@ -27,7 +27,7 @@ export default function FormLogin() {
           emailError.innerHTML = res.data.errors.userEmail;
           passwordError.innerHTML = res.data.errors.userPassword;
         } else {
-          window.location = "/profil";
+          window.location = "/";
         }
       })
       .catch((err) => {
@@ -42,6 +42,7 @@ export default function FormLogin() {
             <img className="im" src="/img/wecoepiLogo.png" alt="logo wecoepi" />
           </div>
           <input
+            className="inputLogin"
             placeholder="email"
             type="text"
             name="userEmail"
@@ -52,6 +53,7 @@ export default function FormLogin() {
           <div className="userEmail error"></div>
 
           <input
+            className="inputLogin"
             placeholder="mot de passe"
             type="password"
             name="userPassword"

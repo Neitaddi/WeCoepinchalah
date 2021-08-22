@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import LoginModal from "../components/Log/Modal/loginModal";
 import { SignUpModal } from "../components/Log/Modal/registerModal";
@@ -7,9 +7,14 @@ import SideBar from "../components/SideBar/sideBar";
 
 import { FaRegUserCircle } from "react-icons/fa";
 import "./Home.css";
+import { UidContext } from "../components/AppContext";
+import LogOut from "../components/Log/formLog/logOut";
+
+import rootReducers from "../js/reducers";
 //............................
 
 function Home() {
+  const uid = useContext(UidContext);
   //useState login
   const [showLoginModal, setShowLoginModal] = useState(false);
   //reff openLoginModal
@@ -61,7 +66,11 @@ function Home() {
       <div className="bgAcceuil">
         <div role="navigation" className="navLeft">
           <Link to="/">
-            <img src="/img/wecoepiLogo.png" alt="logo wecoepi" />
+            <img
+              className="logoHome"
+              src="/img/wecoepiLogo.png"
+              alt="logo wecoepi"
+            />
           </Link>
           <SideBar />
         </div>
@@ -76,7 +85,16 @@ function Home() {
 
         <div role="complementary" className="navRight">
           <div className="Container">
-            <div className="Auth">{LogLinks}</div>
+            <div className="Auth">
+              {uid ? (
+                <div>
+                  {" "}
+                  <LogOut />
+                </div>
+              ) : (
+                <div> {LogLinks} </div>
+              )}
+            </div>
             <div className="SearchClub"></div>
           </div>
         </div>

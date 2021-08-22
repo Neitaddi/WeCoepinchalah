@@ -1,0 +1,311 @@
+@import url(https://allfont.net/allfont.css?fonts=pragmatica-cyrillic);
+body {
+  font-family: "Pragmatica Cyrillic", arial;
+}
+
+/* .form {
+  border-style: solid;
+  border-color: #52ea66;
+} */
+.inputT {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  align-items: flex-start;
+  margin-left: 200px;
+  margin-top: 15px;
+  /* line-height: 3; */
+}
+.selectG {
+  margin-bottom: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 87%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-color: #dbdbdb;
+  border-style: solid;
+  border-width: 2px;
+}
+.selectG:focus {
+  outline: none;
+}
+.selectG:hover {
+  border-color: #ea5652;
+  border-style: solid;
+}
+
+.inputClub {
+  margin-bottom: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 80%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-color: #dbdbdb;
+  border-style: solid;
+}
+.inputClub:focus {
+  outline: none;
+}
+.inputClub:hover {
+  border-color: #ea5652;
+  border-style: solid;
+}
+
+.textAria {
+  margin-bottom: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 80%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-color: #dbdbdb;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.textAria:focus {
+  outline: none;
+}
+.textAria:hover {
+  border-color: #ea5652;
+  border-style: solid;
+}
+.soustext {
+  font-size: 13px;
+  padding-bottom: 10px;
+}
+
+.logo {
+  padding: 0px;
+  margin-left: 40px;
+}
+
+.page1 {
+  margin-top: 40px;
+}
+.page2 {
+  margin-top: 40px;
+}
+
+.title {
+  margin-left: 40px;
+  font-size: 20px;
+}
+.row2 {
+  display: flex;
+}
+.row {
+  display: flex;
+  /* border-color: #52ea66;
+  border-style: solid; */
+}
+
+.form > .inp[type="radio"] {
+  display: none;
+  border-radius: 5px;
+}
+
+.form > .page1 {
+  display: none;
+  border: 1px solid #000;
+  padding: 10px 15px;
+  font-size: 16px;
+  margin-top: 20px;
+}
+#form-btn-1:checked ~ #pageform-1,
+#form-btn-2:checked ~ #pageform-2 {
+  display: block;
+  border-style: none;
+}
+.label {
+  margin-bottom: 10px;
+}
+
+.rightbt {
+  /* border-color: #52ea66;
+  border-style: solid; */
+  width: 32px;
+  height: 32px;
+}
+#form-btn-1,
+.rightbt {
+  position: absolute;
+  top: 300px;
+  left: 20px;
+  cursor: pointer;
+}
+#form-btn-2,
+.leftbt {
+  position: absolute;
+  top: 300px;
+  right: 20px;
+}
+
+.leftbt {
+  cursor: pointer;
+
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  z-index: 10;
+  /* border-color: #52ea66;
+  border-style: solid; */
+}
+#firstOp {
+  padding-left: 20px;
+  font-family: "Pragmatica Cyrillic", arial;
+  color: #dbdbdb;
+}
+#desc {
+  padding-left: 20px;
+  font-family: "Pragmatica Cyrillic", arial;
+}
+
+#inputClub {
+  padding-left: 20px;
+}
+
+.progress-bar {
+  display: flex;
+  margin-left: 250px;
+  margin-top: 20px;
+}
+#progress2 {
+  margin-top: 50px;
+}
+.step {
+  text-align: center;
+
+  width: 100px;
+}
+.progress-bar .step .bullet {
+  position: relative;
+  height: 25px;
+  width: 25px;
+  border: 2px solid #ea5652;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #ea5652;
+}
+.progress-bar .step .bullet2 {
+  position: relative;
+  height: 25px;
+  width: 25px;
+  border: 2px solid #000000;
+  display: inline-block;
+  border-radius: 50%;
+}
+
+.progress-bar .step .bullet:before,
+.progress-bar .step .bullet:after,
+.progress-bar .step .bullet2:before,
+.progress-bar .step .bullet2:after {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 75px;
+  right: -75px;
+  background: #262626;
+  bottom: 11px;
+}
+.progress-bar .step:last-child .bullet:before,
+.progress-bar .step:last-child .bullet:after,
+.progress-bar .step:last-child .bullet2:before,
+.progress-bar .step:last-child .bullet2:after {
+  display: none;
+}
+
+.progress-bar .step .bullet:after {
+  background: #ea5652;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: animate 0.3s linear infinite;
+}
+@keyframes animate {
+  100% {
+    transform: scaleX(1);
+  }
+}
+
+.progress-bar .step span {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+  margin-left: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.progress-bar .step .check {
+  display: none;
+}
+
+/* ................................................. */
+
+.progress-bar .step .bullet0 {
+  position: relative;
+  height: 25px;
+  width: 25px;
+  border: 2px solid #ea5652;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #ea5652;
+}
+.progress-bar .step .bullet1 {
+  position: relative;
+  height: 25px;
+  width: 25px;
+  border: 2px solid #ea5652;
+  display: inline-block;
+  border-radius: 50%;
+  background-color: #ea5652;
+}
+
+.progress-bar .step .bullet0:before,
+.progress-bar .step .bullet0:after,
+.progress-bar .step .bullet1:before,
+.progress-bar .step .bullet1:after {
+  position: absolute;
+  content: "";
+  height: 3px;
+  width: 75px;
+  right: -75px;
+  background: #262626;
+  bottom: 11px;
+}
+.progress-bar .step:last-child .bullet0:before,
+.progress-bar .step:last-child .bullet0:after,
+.progress-bar .step:last-child .bullet1:before,
+.progress-bar .step:last-child .bullet1:after {
+  display: none;
+}
+
+.progress-bar .step .bullet0:after {
+  background: #ea5652;
+}
+
+.progress-bar .step span {
+  font-weight: 500;
+  font-size: 17px;
+  line-height: 25px;
+  margin-left: 0;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.progress-bar .step .check {
+  display: none;
+}
+#inp2 {
+  padding-top: 30px;
+}

@@ -1,9 +1,9 @@
-import React, { useRef, useState } from "react";
+import React, { useState } from "react";
 import axios from "axios";
 // import { SignUpModal } from "../Modal/registerModal";
-import LoginModal from "../Modal/loginModal";
+
 import "./formRegister.css";
-import { Route } from "react-router-dom";
+
 import FormLogin from "./formLogin";
 
 const SignUpForm = () => {
@@ -79,6 +79,7 @@ const SignUpForm = () => {
             <img className="im" src="/img/wecoepiLogo.png" alt="logo wecoepi" />
           </div>
           <input
+            className="input"
             placeholder="email"
             type="email"
             name="userEmail"
@@ -89,6 +90,7 @@ const SignUpForm = () => {
           <div className="userEmail error"></div>
 
           <input
+            className="input"
             placeholder="nom"
             type="text"
             name="userName"
@@ -99,6 +101,7 @@ const SignUpForm = () => {
           <div className="userName error"></div>
 
           <input
+            className="input"
             placeholder="prénom"
             type="text"
             name="userLastName"
@@ -109,6 +112,7 @@ const SignUpForm = () => {
           <div className="userLastName error"></div>
 
           <input
+            className="input"
             placeholder="mot de passe"
             type="password"
             name="userPassword"
@@ -119,6 +123,7 @@ const SignUpForm = () => {
           <div className="userPassword error"></div>
 
           <input
+            className="input"
             placeholder="confire mot de passe"
             type="password"
             name="userControlPassword"
@@ -137,7 +142,9 @@ const SignUpForm = () => {
           </label>
           <div className="terms error"></div>
 
-          <button type="submit">S'inscrire</button>
+          <button className="submitFR" type="submit">
+            S'inscrire
+          </button>
         </form>
       )}
     </div>

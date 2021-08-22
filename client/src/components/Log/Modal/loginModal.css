@@ -121,7 +121,7 @@ button {
   /* border-color: #ea5652;
   border-style: solid; */
 }
-p {
+/* p {
   margin-bottom: 1rem;
 }
 button {
@@ -129,7 +129,7 @@ button {
   background: #ea5652;
   color: #fff;
   border: none;
-}
+} */
 
 .CloseModalButton {
   cursor: pointer;

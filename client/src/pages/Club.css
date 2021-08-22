@@ -3,8 +3,8 @@
   display: flex;
   justify-content: space-between;
   background-color: #f9f9f9;
-  border-style: solid;
-  border-color: yellow;
+  /* border-style: solid;
+  border-color: yellow; */
 }
 
 .navLeftCb {
@@ -67,7 +67,7 @@
     rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
   background-color: #ffffff;
 }
-img {
+.logoClub {
   padding-top: 10%;
   padding-left: 30%;
 }

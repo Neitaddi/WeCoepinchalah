@@ -11,18 +11,18 @@
 .im {
   padding-left: 0;
 }
-input {
+.input {
   border-style: solid;
   border-radius: 10px;
   border-color: #fb544e;
   padding: 3px 20px 3px 20px;
   border-width: 1.5px;
 }
-button {
+.submitFR {
   margin-top: 0;
   margin-left: 50px;
 }
-button:hover {
+.submitFR:hover {
   margin-top: 0;
   margin-left: 50px;
   cursor: pointer;

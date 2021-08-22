@@ -3,6 +3,8 @@ import { useSpring, animated } from "react-spring";
 
 import { MdClose } from "react-icons/md";
 import "./RegisterModalClub.css";
+import formRegisterModelClub from "./formRegisterModelClub";
+import FormRegisterModelClub from "./formRegisterModelClub";
 
 const ReginterModalClub = ({
   showReginterModalClub,
@@ -49,8 +51,9 @@ const ReginterModalClub = ({
         >
           <animated.div style={animation}>
             <div className=" ModalWrapperCbs">
-              <img className="ModalImgCbs" src="img/img-1.svg" alt="login" />
-              <div className="ModalContent"></div>
+              <div className="ModalContentCbs">
+                <FormRegisterModelClub />
+              </div>
               <div
                 className="CloseModalButtonCbs"
                 aria-label="Close modal"

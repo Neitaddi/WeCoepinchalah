@@ -12,7 +12,11 @@ const Club = () => {
     <div className="bgAcceuilCb">
       <div role="navigation" className="navLeftCb">
         <Link to="/">
-          <img src="/img/wecoepiLogo.png" alt="logo wecoepi" />
+          <img
+            className="logoClub"
+            src="/img/wecoepiLogo.png"
+            alt="logo wecoepi"
+          />
         </Link>
         <SideBarProfilClub />
       </div>

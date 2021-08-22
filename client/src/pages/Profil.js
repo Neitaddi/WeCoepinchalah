@@ -9,11 +9,7 @@ const Profil = () => {
 
   return (
     <div className="bgAcceuilpf">
-      <div role="navigation" className="navLeftpf">
-        <Link to="/">
-          <img src="/img/wecoepiLogo.png" alt="logo wecoepi" />
-        </Link>
-      </div>
+      <div role="navigation" className="navLeftpf"></div>
 
       <div role="main" className="navMiddlepf"></div>
     </div>
