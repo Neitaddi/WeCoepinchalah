@@ -36,6 +36,7 @@
     "reactstrap": "^8.9.0",
     "redux": "^4.1.1",
     "redux-thunk": "^2.3.0",
+    "sweetalert2": "^11.1.4",
     "validator": "^13.6.0"
   }
 }

@@ -76,7 +76,7 @@ const Clubs = (props) => {
                 .map((club, index) => (
                   <div key={index}>
                     <Link
-                      to={`/club/${club._id}`}
+                      to={"/club/" + club._id}
                       style={{ color: "inherit" }}
                       className="goToClubPageProfil"
                     >

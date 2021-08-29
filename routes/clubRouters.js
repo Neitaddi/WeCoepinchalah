@@ -8,9 +8,5 @@ router.post("/:id", clubControllers.createClub);
 router.get("/", clubControllers.AllClubsInfo);
 router.get("/:id", clubControllers.clubInfo);
 //upload file
-router.post(
-  "/upload/:id",
-  upload.single("file"),
-  uploadController.uploadProfilClub
-);
+router.patch("/upload/:id", uploadController.uploadProfilClub);
 module.exports = router;
