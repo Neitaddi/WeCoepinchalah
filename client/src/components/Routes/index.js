@@ -1,4 +1,5 @@
 import React from "react";
+
 import {
   BrowserRouter as Router,
   Redirect,
@@ -18,8 +19,8 @@ const index = () => {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/profil" exact component={Profil} />
-          <Route path="/trending" exact component={Trending} />
-          <Route path="/club" exact component={Club} />
+          <Route path="/trending/:id" exact component={Trending} />
+          <Route path="/club/:club_id" exact component={Club} />
           <Route path="/clubs" exact component={Clubs} />
           <Redirect to="/" />
         </Switch>

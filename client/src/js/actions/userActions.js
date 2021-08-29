@@ -1,5 +1,9 @@
 import axios from "axios";
-import { GET_USER, UPLOAD_PICTURE } from "../constatnts/userActionTypes";
+import {
+  GET_USER,
+  UPLOAD_PICTURE,
+  UPDATE_USER,
+} from "../constatnts/userActionTypes";
 //get user
 export const getUser = (uid) => {
   return (dispatch) => {
@@ -26,6 +30,26 @@ export const uploadPicture = (data, id) => {
           .then((res) => {
             dispatch({ type: UPLOAD_PICTURE, payload: res.data.picture });
           });
+      })
+      .catch((err) => console.log(err));
+  };
+};
+
+export const updateUser = (
+  userId,
+  userName,
+  userLastName,
+  userBio,
+  userEmail
+) => {
+  return (dispatch) => {
+    return axios({
+      method: "put",
+      url: `${process.env.REACT_APP_API_URL}api/user/` + userId,
+      data: { userName, userLastName, userBio, userEmail },
+    })
+      .then((res) => {
+        dispatch({ type: UPDATE_USER, payload: res.data });
       })
       .catch((err) => console.log(err));
   };

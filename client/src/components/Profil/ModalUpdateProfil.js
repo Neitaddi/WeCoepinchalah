@@ -4,7 +4,7 @@ import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 
 import { MdClose } from "react-icons/md";
-// import FormUpdateProfile from "./formUpdateProfile";
+import FormUpdateProfile from "./formUpdateProfile";
 
 const ModalUpdateProfil = ({
   showModalUpdateProfil,
@@ -52,7 +52,7 @@ const ModalUpdateProfil = ({
           <animated.div style={animation}>
             <div className=" ModalWrapperUpPf">
               <div className="ModalContentUpPf">
-                {/* <FormUpdateProfile /> */}
+                <FormUpdateProfile />
               </div>
               <div
                 className="CloseModalButtonUpPf"

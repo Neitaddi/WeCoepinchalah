@@ -6,6 +6,7 @@ const cors = require("cors");
 //require routes
 const userRouters = require("./routes/userRoutes.js");
 const postRouters = require("./routes/postRouters");
+const clubRouters = require("./routes/clubRouters");
 
 //require dotenv
 require("dotenv").config({ path: "./config/.env" });
@@ -51,6 +52,8 @@ app.get("/jwtid", requireAuth, (req, res) => {
 app.use("/api/user", userRouters);
 //post routers
 app.use("/api/post", postRouters);
+//club routers
+app.use("/api/club", clubRouters);
 
 //lanch server
 app.listen(process.env.PORT, (error) =>

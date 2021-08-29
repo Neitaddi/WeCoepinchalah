@@ -1,0 +1,141 @@
+.entetepf > h2 {
+  margin-left: 80px;
+}
+.entetepf > .logoMpf {
+  margin-left: 70px;
+  margin-top: 20px;
+}
+.entetepf > .btnModifierpf {
+  position: relative;
+  left: 300px;
+  top: 20px;
+  border-color: #fb544e;
+  color: #ffffff;
+  background-color: #fb544eec;
+
+  padding: 10px 10px 10px 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+}
+.entetepf > .btnModifierpf:hover {
+  position: relative;
+  left: 300px;
+  top: 20px;
+  border-color: #fb544e91;
+  color: #ffffffea;
+  border-width: 0.5px;
+  background-color: #fb544ec2;
+  /* border-style: solid; */
+  border-width: 2px;
+  padding: 10px 10px 10px 10px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+
+  cursor: pointer;
+}
+#pf {
+  padding-left: 20px;
+  font-family: "Pragmatica Cyrillic", arial;
+}
+
+.formpf {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+
+  align-items: center;
+  margin-left: 50px;
+  /* margin-top: 50px; */
+  /* line-height: 3; */
+  /* border-color: #000000;
+  border-style: solid; */
+}
+.formpf > h2 {
+  margin-right: 300px;
+}
+.labelPf {
+  font-size: 18px;
+  margin-right: 70%;
+  margin-bottom: 5px;
+  color: #d8d7d7;
+}
+
+.modifierUserName {
+  margin-bottom: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 80%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-color: #dbdbdb;
+  border-style: solid;
+}
+.modifierUserLastName {
+  margin-bottom: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 80%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-color: #dbdbdb;
+  border-style: solid;
+}
+.modifierUserEmail {
+  margin-bottom: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 80%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-color: #dbdbdb;
+  border-style: solid;
+}
+.modifierUserName:hover {
+  border-color: #ea5652;
+  border-style: solid;
+}
+.modifierUserLastName:hover {
+  border-color: #ea5652;
+  border-style: solid;
+}
+.modifierUserEmail:hover {
+  border-color: #ea5652;
+  border-style: solid;
+}
+.modifierUserName,
+.modifierUserLastName,
+.modifierUserEmail:focus {
+  outline: none;
+}
+
+.modifierUserBio {
+  margin-bottom: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  width: 80%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-color: #dbdbdb;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.modifierUserBio:focus {
+  outline: none;
+}
+.modifierUserBio:hover {
+  border-color: #ea5652;
+  border-style: solid;
+}

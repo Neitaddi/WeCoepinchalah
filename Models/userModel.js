@@ -50,6 +50,13 @@ const userSchema = new mongoose.Schema(
     userFollowing: {
       type: [String],
     },
+    userClubs: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "club",
+      },
+    ],
+
     userLikes: {
       type: [String],
     },

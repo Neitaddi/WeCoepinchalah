@@ -6,6 +6,7 @@ import ModalUpdateProfil from "../components/Profil/ModalUpdateProfil";
 import "./Profil.css";
 import UploadImg from "../components/Profil/uploadeImg";
 import NavMiddleProfil from "../components/Profil/navMiddleProfil";
+import { FiEdit } from "react-icons/fi";
 
 const Profil = () => {
   //useState login
@@ -17,13 +18,13 @@ const Profil = () => {
   const LogLinks = (
     <button className="ModifierProfil" onClick={openModalUpdateProfil}>
       {" "}
-      Modifier Profil
+      <FiEdit /> Modifier le Profil
     </button>
   );
 
   //stock userData from store
   const userData = useSelector((state) => state.userReducer);
-
+  console.log("userData", userData);
   return (
     <div className="bgAcceuilpf">
       <ModalUpdateProfil

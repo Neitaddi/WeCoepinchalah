@@ -32,7 +32,12 @@ module.exports.userUpdate = (req, res) => {
     userModel.findByIdAndUpdate(
       { _id: req.params.id },
       {
-        $set: req.body,
+        $set: {
+          userName: req.body.userName,
+          userLastName: req.body.userLastName,
+          userEmail: req.body.userEmail,
+          userBio: req.body.userBio,
+        },
       },
       { new: true, upsert: true, setDefaultsOnInsert: true },
       (err, docs) => {
@@ -70,7 +75,7 @@ module.exports.follow = async (req, res) => {
     // add to the follower list
     await userModel.findByIdAndUpdate(
       req.params.id,
-      { $addToSet: { following: req.body.idToFollow } },
+      { $addToSet: { userFollowing: req.body.idToFollow } },
       { new: true, upsert: true },
       (err, docs) => {
         if (!err) res.status(201).json(docs);
@@ -80,7 +85,7 @@ module.exports.follow = async (req, res) => {
     // add to following list
     await userModel.findByIdAndUpdate(
       req.body.idToFollow,
-      { $addToSet: { followers: req.params.id } },
+      { $addToSet: { userFollowers: req.params.id } },
       { new: true, upsert: true },
       (err, docs) => {
         // if (!err) res.status(201).json(docs);
@@ -102,7 +107,7 @@ module.exports.unfollow = async (req, res) => {
   try {
     await userModel.findByIdAndUpdate(
       req.params.id,
-      { $pull: { following: req.body.idToUnfollow } },
+      { $pull: { userFollowing: req.body.idToUnfollow } },
       { new: true, upsert: true },
       (err, docs) => {
         if (!err) res.status(201).json(docs);
@@ -112,7 +117,7 @@ module.exports.unfollow = async (req, res) => {
     // remove to following list
     await userModel.findByIdAndUpdate(
       req.body.idToUnfollow,
-      { $pull: { followers: req.params.id } },
+      { $pull: { userFollowers: req.params.id } },
       { new: true, upsert: true },
       (err, docs) => {
         // if (!err) res.status(201).json(docs);

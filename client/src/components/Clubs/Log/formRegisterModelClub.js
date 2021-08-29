@@ -1,8 +1,41 @@
-import React from "react";
+import axios from "axios";
+import React, { useState } from "react";
 import { BsChevronRight, BsChevronLeft, BsInfoCircle } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
+import { addClub } from "../../../js/actions/clubActions";
 import "./formRegisterModalClub.css";
 
 const FormRegisterModelClub = () => {
+  // ('posterId', userData._id);
+  const userData = useSelector((state) => state.userReducer);
+  const clubData = useSelector((state) => state.clubReducer);
+
+  const [clubName, setClubName] = useState("");
+  const [clubCategorie, setClubCategorie] = useState("");
+  const [clubDescription, setClubDescription] = useState("");
+  const [clubLocatioun, setClubLocatioun] = useState("");
+  const [clubPhone, setClubPhone] = useState("");
+  const [clubEmail, setClubEmail] = useState("");
+  const [clubWebSite, setClubWebSite] = useState("");
+  const dispatch = useDispatch();
+
+  const handleCreteClub = async (e) => {
+    e.preventDefault();
+
+    dispatch(
+      addClub(
+        userData._id,
+        clubName,
+        clubCategorie,
+        clubDescription,
+        clubLocatioun,
+        clubPhone,
+        clubEmail,
+        clubWebSite
+      )
+    );
+  };
+
   return (
     <div className="container">
       <div className="from-outer">
@@ -53,12 +86,16 @@ const FormRegisterModelClub = () => {
                   id="inputClub"
                   type="text"
                   placeholder="Nom du Club (Obligatoire)"
+                  onChange={(e) => setClubName(e.target.value)}
+                  value={clubName}
                 />
                 <input
                   className="inputClub"
                   id="inputClub"
                   type="text"
                   placeholder="Catégorie (Obligatoire)"
+                  onChange={(e) => setClubCategorie(e.target.value)}
+                  value={clubCategorie}
                 />
                 <div className="soustext">
                   Choisissez une catégorie qui décrit le type de Club.
@@ -71,6 +108,8 @@ const FormRegisterModelClub = () => {
                   name="desc"
                   rows="5"
                   cols="33"
+                  onChange={(e) => setClubDescription(e.target.value)}
+                  value={clubDescription}
                 />
                 <div className="soustext">
                   Décrivez ce que fait votre Club et leur objectif . <br />{" "}
@@ -100,11 +139,19 @@ const FormRegisterModelClub = () => {
               src="/img/wecoepiLogo.png"
               alt="logo wecoepi"
             />
+            <button className="btnCreateClub" onClick={handleCreteClub}>
+              Crée un Club
+            </button>
 
             <div className="page">
               <div className="inputT" id="inp2">
                 <div className="label">Localisation</div>
-                <select className="selectG" id="desc">
+                <select
+                  className="selectG"
+                  id="desc"
+                  onChange={(e) => setClubLocatioun(e.target.value)}
+                  value={clubLocatioun}
+                >
                   <option value="" selected disabled hidden id="firstOp">
                     Gouvernerat (Obligatoire)
                   </option>
@@ -139,18 +186,24 @@ const FormRegisterModelClub = () => {
                   id="inputClub"
                   placeholder="Numéro de téléphone (Obligatoire)"
                   type="text"
+                  onChange={(e) => setClubPhone(e.target.value)}
+                  value={clubPhone}
                 />
                 <input
                   className="inputClub"
                   id="inputClub"
                   placeholder="Adresse e-mail (Obligatoire)"
                   type="text"
+                  onChange={(e) => setClubEmail(e.target.value)}
+                  value={clubEmail}
                 />
                 <input
                   className="inputClub"
                   id="inputClub"
                   placeholder="Site web (Optionél)"
                   type="text"
+                  onChange={(e) => setClubWebSite(e.target.value)}
+                  value={clubWebSite}
                 />
               </div>
             </div>
