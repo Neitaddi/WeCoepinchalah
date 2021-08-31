@@ -2,20 +2,22 @@ import React, { useContext, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import LoginModal from "../components/Log/Modal/loginModal";
 import { SignUpModal } from "../components/Log/Modal/registerModal";
-import SideBar from "../components/SideBar/sideBar";
 // import { ProgressBar } from "../components/progressBar/progressbar";
 import { useSelector } from "react-redux";
 import { FaRegUserCircle } from "react-icons/fa";
 import "./Home.css";
 import { UidContext } from "../components/AppContext";
 import LogOut from "../components/Log/formLog/logOut";
+import { FiHome } from "react-icons/fi";
+import { AiOutlineTeam } from "react-icons/ai";
+import { IoPersonOutline } from "react-icons/io5";
 
-import rootReducers from "../js/reducers";
 //............................
 
 function Home() {
   const uid = useContext(UidContext);
   const userData = useSelector((state) => state.userReducer);
+
   //useState login
   const [showLoginModal, setShowLoginModal] = useState(false);
   //reff openLoginModal
@@ -73,7 +75,49 @@ function Home() {
               alt="logo wecoepi"
             />
           </Link>
-          <SideBar />
+          {/* <SideBar /> */}
+          {uid ? (
+            <nav className={"side-menu active"}>
+              <ul className="side-menu-items">
+                <li className="side-text">
+                  <Link to={"/acceuil"} className="linkP">
+                    <FiHome className="icons" />
+                    <span className="title">Acceuil</span>
+                  </Link>
+                </li>
+                <li className="side-text">
+                  <Link to={"/profil"} className="linkP">
+                    <IoPersonOutline className="icons" />
+                    <span className="title">Profil</span>
+                  </Link>
+                </li>
+                <li className="side-text">
+                  <Link to={"/clubs"} className="linkP">
+                    <AiOutlineTeam className="icons" />
+                    <span className="title">Clubs</span>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          ) : (
+            <nav className={"side-menu active"}>
+              <ul className="side-menu-items">
+                <li className="side-text">
+                  <Link to={"/acceuil"} className="linkP">
+                    <FiHome className="icons" />
+                    <span className="title">Acceuil</span>
+                  </Link>
+                </li>
+
+                <li className="side-text">
+                  <Link to={"/clubs"} className="linkP">
+                    <AiOutlineTeam className="icons" />
+                    <span className="title">Clubs</span>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          )}
         </div>
 
         <div role="main" className="navMiddle">

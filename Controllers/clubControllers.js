@@ -58,6 +58,7 @@ module.exports.AllClubsInfo = async (req, res) => {
   try {
     const club = await clubModel.find().populate("createrId");
     res.send(club);
+    console.log(club);
   } catch (error) {
     console.log(error);
   }

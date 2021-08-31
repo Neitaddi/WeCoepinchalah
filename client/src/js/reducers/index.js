@@ -5,7 +5,7 @@ import clubReducer from "./clubReducer";
 import usersReducer from "./usersReducer";
 
 export default combineReducers({
-  usersRed: usersReducer,
+  usersReducer,
   clubRed: clubReducer,
   userReducer,
   clubsRed: clubsReducer,

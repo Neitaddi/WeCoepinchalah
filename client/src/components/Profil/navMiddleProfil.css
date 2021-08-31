@@ -58,3 +58,51 @@
   border-style: solid;
   border-color: rgb(255, 0, 0);
 } */
+.flow {
+  margin-top: 20px;
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.followers:hover {
+  cursor: pointer;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.1) 0px 2px 16px 0px;
+}
+.followwing:hover {
+  cursor: pointer;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.1) 0px 2px 16px 0px;
+}
+.followers {
+  padding: 10px 20px 10px 20px;
+  background-color: lightcoral;
+  margin-left: 50px;
+  border-radius: 15px;
+  color: #fff;
+}
+.followwing {
+  padding: 10px 40px 10px 40px;
+  background-color: lightcoral;
+  padding: 10px 10px 10px 10px;
+  border-radius: 15px;
+  color: #fff;
+}
+.userClubss {
+  padding: 10px 20px 10px 20px;
+  border-color: lightcoral;
+  border-style: solid;
+  border-width: 1px;
+  margin-left: 50px;
+  border-radius: 15px;
+  cursor: pointer;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.1) 0px 2px 16px 0px;
+  font-size: 20px;
+  align-items: center;
+  margin-right: 50px;
+}
+.date {
+  margin-top: 20px;
+}

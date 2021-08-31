@@ -23,7 +23,7 @@ const Clubs = (props) => {
       setClublist(props.clubs);
     }
   }, [props.clubs]);
-  console.log("clublist", clublist);
+  // console.log("clublist3", clublist);
 
   // const pushUserClick = (id) => {
   //   props.history.push({

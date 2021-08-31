@@ -4,10 +4,15 @@ const userModel = require("../Models/userModel.js");
 //require ObjectID
 const ObjectID = require("mongoose").Types.ObjectId;
 
-//function getAllUsers
+// //function getAllUsers
+// module.exports.getAllUsers = async (req, res) => {
+//   const users = await userModel.find().select("-userPassword");
+//   res.status(200).json(users);
+// };
 module.exports.getAllUsers = async (req, res) => {
-  const users = await userModel.find().select("-userPassword");
+  const users = await userModel.find().select("-password");
   res.status(200).json(users);
+  console.log(users);
 };
 
 //get info user

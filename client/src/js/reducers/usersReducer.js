@@ -1,15 +1,11 @@
 import { GET_USERS } from "../constatnts/userActionTypes";
 
-const initialState = {
-  users: [],
-};
+const initialState = {};
 
 export default function usersReducer(state = initialState, action) {
   switch (action.type) {
     case GET_USERS:
-      return {
-        users: action.payload,
-      };
+      return action.payload;
     default:
       return state;
   }

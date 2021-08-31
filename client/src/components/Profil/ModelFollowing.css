@@ -1,0 +1,73 @@
+.BackgroundFollowing {
+  width: 50%;
+  height: 50%;
+  background: rgba(187, 186, 186, 0);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.ModalWrapperFollowing {
+  width: 500px;
+  height: 300px;
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border-color: lightcoral;
+  border-style: solid;
+  color: #000;
+  display: grid;
+  grid-template-columns: 1fr;
+  position: relative;
+  z-index: 10;
+  border-radius: 10px;
+}
+
+.ModalContentFollowing::-webkit-scrollbar {
+  width: 16px;
+  background-color: #e0e0e0;
+  border-radius: 10px;
+}
+.ModalContentFollowing::-webkit-scrollbar-track {
+  width: 5px;
+  background-color: #ececec;
+  border-radius: 10px;
+}
+.ModalContentFollowing::-webkit-scrollbar-thumb {
+  background-color: lightcoral;
+  border-radius: 10px;
+}
+
+.ModalContentFollowing {
+  /* border-color: #eae052;
+  border-style: solid; */
+  display: flex;
+  overflow-y: hidden;
+  overflow-y: scroll;
+  margin-top: 5px;
+  height: 290px;
+  width: 495px;
+  background-color: rgb(245, 245, 245);
+}
+/* p {
+      margin-bottom: 1rem;
+    } */
+/* button {
+      padding: 10px 24px;
+      background: #ea5652;
+      color: #fff;
+      border: none;
+    } */
+
+.CloseModalButtonFollowing {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  right: 10px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  z-index: 10;
+  /* border-color: #52ea66;
+      border-style: solid; */
+}
