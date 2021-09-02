@@ -53,7 +53,14 @@ const clubSchema = new mongoose.Schema(
       type: String,
       default: "./uploads/profil/random-user.png",
     },
+    clubPostes: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "post",
+      },
+    ],
   },
+
   {
     timestamps: true,
   }

@@ -6,14 +6,26 @@ import {
 } from "../constatnts/clubActionTypes";
 
 //get All Clubs
-export const getClubs = () => (dispatch) => {
-  return axios
-    .get(`${process.env.REACT_APP_API_URL}api/club/`)
-    .then((res) => {
-      console.log("res", res);
-      dispatch({ type: GET_CLUBS, payload: res.data });
-    })
-    .catch((err) => console.log(err));
+// export const getClubs = () => {
+//   (dispatch) => {
+//     return axios
+//       .get(`${process.env.REACT_APP_API_URL}api/club/`)
+//       .then((res) => {
+//         console.log("res", res);
+//         dispatch({ type: GET_CLUBS, payload: res.data });
+//       })
+//       .catch((err) => console.log(err));
+//   };
+// };
+export const getClubs = () => {
+  return (dispatch) => {
+    return axios
+      .get(`${process.env.REACT_APP_API_URL}api/club/`)
+      .then((res) => {
+        dispatch({ type: GET_CLUBS, payload: res.data });
+      })
+      .catch((err) => console.log(err));
+  };
 };
 
 export const addClub = (

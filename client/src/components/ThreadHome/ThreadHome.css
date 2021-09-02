@@ -1,0 +1,32 @@
+.cardPost {
+  border-style: solid;
+  border-color: lightcoral;
+  border-width: 2px;
+  border-radius: 15px;
+  background-color: #fff;
+  margin-top: 20px;
+  padding: 10px;
+}
+.tetePostHome {
+  display: flex;
+  align-items: center;
+}
+.datePost {
+  margin-left: 100px;
+  color: rgb(119, 118, 118);
+  font-size: 15px;
+}
+.MessagePost {
+  margin-top: 8px;
+  margin-left: 30px;
+}
+.nembreCmt {
+  display: flex;
+  width: 200px;
+  border-style: solid;
+}
+.coment {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -5,6 +5,7 @@ import App from "./App";
 import { Provider } from "react-redux";
 import store from "./js/store/store";
 import reportWebVitals from "./reportWebVitals";
+import { getUsers } from "./js/actions/usersActions";
 
 ReactDOM.render(
   //naadilo store ka props

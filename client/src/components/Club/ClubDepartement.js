@@ -110,8 +110,8 @@ ClubDepartement.propTypes = {
 };
 const mapStateToProps = (state, ownProps) => {
   console.log(state);
-  const idC = ownProps.match.params.idC;
-  return { clubs: state.clubsRed.clubs.find((clubs) => clubs.idC === idC) };
+  const idC = ownProps.match.params.club_id;
+  return { clubs: state.clubs.clubs.find((club) => club._id === idC) };
 };
 
 export default connect(mapStateToProps, { getClubs })(ClubDepartement);

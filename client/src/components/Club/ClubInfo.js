@@ -25,8 +25,9 @@ const ClubInfo = (props) => {
   const [clublist, setClublist] = useState({});
   const [photo, setPhoto] = useState("");
   // ..............................................
-
-  // const idC = props.match.params.idC;
+  const usersData = useSelector((state) => state.usersReducer);
+  const clubs = useSelector((state) => state.clubs.clubs);
+  const idC = props.match.params.idC;
   const dispatch = useDispatch();
   // ...............................................
 
@@ -97,7 +98,14 @@ const ClubInfo = (props) => {
           </div> */}
           <div role="main" className="buttomCb">
             <div>
-              <h1>Info</h1>
+              {/* {clubs
+                .filter((club) => club._id == idC)
+                .map((club) => {
+                  for (let i = 0; i < usersData.length; i++) {
+                    if (club.createrId === usersData[i]._id)
+                      <div>{usersData[i].userName}</div>;
+                  }
+                })} */}
             </div>{" "}
           </div>
         </div>
@@ -109,9 +117,9 @@ ClubInfo.propTypes = {
   getClubs: PropTypes.func,
 };
 const mapStateToProps = (state, ownProps) => {
-  console.log(state);
-  const idC = ownProps.match.params.idC;
-  return { clubs: state.clubsRed.clubs.find((clubs) => clubs.idC === idC) };
+  console.log("ownProps", ownProps);
+  const idC = ownProps.match.params.club_id;
+  return { clubs: state.clubs.clubs.find((club) => club._id === idC) };
 };
 
 export default connect(mapStateToProps, { getClubs })(ClubInfo);

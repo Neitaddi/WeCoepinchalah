@@ -44,7 +44,7 @@ module.exports.createClub = async (req, res) => {
         { new: true, upsert: true },
         (err, docs) => {
           if (!err) res.status(201).json(docs);
-          else return res.status(400).jsos(err);
+          else return res.status(400).json(err);
         }
       )
       .populate("createrId");
@@ -56,7 +56,7 @@ module.exports.createClub = async (req, res) => {
 
 module.exports.AllClubsInfo = async (req, res) => {
   try {
-    const club = await clubModel.find().populate("createrId");
+    const club = await clubModel.find();
     res.send(club);
     console.log(club);
   } catch (error) {

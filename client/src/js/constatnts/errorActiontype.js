@@ -1,0 +1,2 @@
+export const GET_POST_ERRORS = "GET_POST_ERRORS";
+export const GET_USER_ERRORS = "GET_USER_ERRORS";

@@ -58,28 +58,24 @@
 } */
 
 .ModifierProfil {
-  border-color: lightcoral;
   color: #ffffff;
   background-color: lightcoral;
-
-  /* border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px; */
-  /* margin-left: 110px;
-  margin-top: 20px; */
-}
-.ModifierProfil:hover {
-  border-color: lightcoral;
-  color: #ffffffea;
-
-  background-color: lightcoral;
-  /* border-style: solid; */
-
+  padding: 15px 20px 15px 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
   border-top-right-radius: 20px;
   border-top-left-radius: 20px;
+  margin-left: 110px;
+  margin-top: 20px;
+  font-size: 13px;
+}
+.ModifierProfil:hover {
+  color: #ffffffea;
+
+  background-color: lightcoral;
+
+  padding: 15px 20px 15px 20px;
+  border-radius: 20ps;
   margin-left: 110px;
   margin-top: 20px;
   cursor: pointer;

@@ -19,10 +19,10 @@ const Profil = () => {
     setShowModalUpdateProfil((prev) => !prev);
   };
   const LogLinks = (
-    <div className="ModifierProfil" onClick={openModalUpdateProfil}>
+    <label className="ModifierProfil" onClick={openModalUpdateProfil}>
       {" "}
       <FiEdit /> Modifier le Profil
-    </div>
+    </label>
   );
 
   //stock userData from store

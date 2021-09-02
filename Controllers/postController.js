@@ -1,9 +1,8 @@
 const postModel = require("../Models/postModel");
-
+const clubModel = require("../Models/clubModel");
 const userModel = require("../Models/userModel");
 const { uploadErrors } = require("../utils/errorsUtils");
 const ObjectID = require("mongoose").Types.ObjectId;
-
 const fs = require("fs");
 const { promisify } = require("util");
 const pipeline = promisify(require("stream").pipeline);
@@ -17,6 +16,7 @@ module.exports.readPost = (req, res) => {
     })
     .sort({ createdAt: -1 });
 };
+
 module.exports.createPost = async (req, res) => {
   let fileName;
 
@@ -43,21 +43,71 @@ module.exports.createPost = async (req, res) => {
       )
     );
   }
+
   const newPost = new postModel({
     posterId: req.body.posterId,
+    posterClub: req.body.posterClub,
     postMessage: req.body.postMessage,
-    postPicture: req.file !== null ? "./uploads/posts/" + fileName : "",
+    postPicture: req.body.file !== null ? "./uploads/posts/" + fileName : "",
     postVideo: req.body.postVideo,
     postLikers: [],
     postComments: [],
   });
   try {
     const post = await newPost.save();
+    console.log(req.params);
+    // add to the follower list
+    await clubModel
+      .findByIdAndUpdate(
+        req.params.id,
+        { $addToSet: { clubPostes: post._id } },
+        { new: true, upsert: true },
+        (err, docs) => {
+          if (!err) res.status(201).json(docs);
+          else return res.status(400).json(err);
+        }
+      )
+      .populate("posterId");
     return res.status(201).json(post);
   } catch (err) {
     return res.status(400).send(err);
   }
 };
+
+// ................................
+// module.exports.createClub = async (req, res) => {
+//   const newClub = new clubModel({
+//     createrId: req.body.createrId,
+//     clubName: req.body.clubName,
+//     clubCategorie: req.body.clubCategorie,
+//     clubDescription: req.body.clubDescription,
+//     clubLocatioun: req.body.clubLocatioun,
+//     clubPhone: req.body.clubPhone,
+//     clubEmail: req.body.clubEmail,
+//     clubWebSite: req.body.clubWebSite,
+//   });
+
+//   try {
+//     const club = await newClub.save();
+//     // add to the follower list
+//     await userModel
+//       .findByIdAndUpdate(
+//         req.params.id,
+//         { $addToSet: { userClubs: club._id } },
+//         { new: true, upsert: true },
+//         (err, docs) => {
+//           if (!err) res.status(201).json(docs);
+//           else return res.status(400).jsos(err);
+//         }
+//       )
+//       .populate("createrId");
+//     return res.status(201).json(club);
+//   } catch (err) {
+//     return res.status(400).send(err);
+//   }
+// };
+// .......................
+
 module.exports.updatePost = (req, res) => {
   if (!ObjectID.isValid(req.params.id))
     return res.status(400).send("ID unknown : " + req.params.id);

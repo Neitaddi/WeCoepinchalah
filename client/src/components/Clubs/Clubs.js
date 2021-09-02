@@ -14,6 +14,7 @@ const Clubs = (props) => {
   // const club = useSelector((state) => state.clubReducer);
   // const initialState = useSelector((state) => state.clubReducer);
   const userData = useSelector((state) => state.userReducer);
+  const usersData = useSelector((state) => state.usersReducer);
   const [clublist, setClublist] = useState(props.clubs);
   useEffect(() => {
     props.getClubs().then(() => {});
@@ -39,10 +40,10 @@ const Clubs = (props) => {
     setShowReginterModalClub((prev) => !prev);
   };
   const LogLinks = (
-    <button className="createClub" onClick={openReginterModalClub}>
+    <label className="createClub" onClick={openReginterModalClub}>
       {" "}
-      Connexion
-    </button>
+      Créer un Club
+    </label>
   );
 
   return (
@@ -72,7 +73,7 @@ const Clubs = (props) => {
           <div className="scrollber">
             {clublist &&
               clublist
-                .filter((club) => club.createrId._id === userData._id)
+                .filter((club) => club.createrId === userData._id)
                 .map((club, index) => (
                   <div key={index}>
                     <Link
@@ -115,16 +116,16 @@ const Clubs = (props) => {
                             <div className="circular--landscape">
                               <img
                                 class="circular--userPcc"
-                                src={club.createrId.userPicture}
+                                src={userData.userPicture}
                                 alt="user-pic"
                               />
                             </div>
 
                             <div className="clubuserLastName">
-                              {club.createrId.userLastName}
+                              {userData.userLastName}
                             </div>
                             <div className="clubuserName">
-                              {club.createrId.userName}
+                              {userData.userName}
                             </div>
                           </div>
                         </div>
@@ -137,63 +138,68 @@ const Clubs = (props) => {
         {/* <AllClubs /> */}
         <div id="content-2">
           <div className="scrollber">
-            {clublist.map((club) => (
-              <Link
-                to={`/club/${club._id}`}
-                style={{ color: "inherit" }}
-                className="goToClubPage"
-              >
-                <div className="loveu">
-                  <div className="nameAndPic">
-                    <div className="circular--landscape">
-                      <img
-                        class="circular--clubs"
-                        src={club.clubPicture}
-                        alt="user-pic"
-                      />
-                    </div>
-                  </div>
+            {clublist.map((club) => {
+              for (let i = 0; i < usersData.length; i++) {
+                if (club.createrId === usersData[i]._id)
+                  return (
+                    <Link
+                      to={`/club/${club._id}`}
+                      style={{ color: "inherit" }}
+                      className="goToClubPage"
+                    >
+                      <div className="loveu">
+                        <div className="nameAndPic">
+                          <div className="circular--landscape">
+                            <img
+                              class="circular--clubs"
+                              src={club.clubPicture}
+                              alt="user-pic"
+                            />
+                          </div>
+                        </div>
 
-                  <div className="clubInfo">
-                    <div className="clubNameList">{club.clubName}</div>
-                    <div className="categorieclub">
-                      <div className="icon">
-                        <BsAward />
-                      </div>
-                      <div className="clubCategoriList">
-                        {club.clubCategorie}
-                      </div>
-                    </div>
+                        <div className="clubInfo">
+                          <div className="clubNameList">{club.clubName}</div>
+                          <div className="categorieclub">
+                            <div className="icon">
+                              <BsAward />
+                            </div>
+                            <div className="clubCategoriList">
+                              {club.clubCategorie}
+                            </div>
+                          </div>
 
-                    <div className="locationclub">
-                      {" "}
-                      <div className="icon">
-                        <MdLocationOn />
-                      </div>
-                      <div className="clubLocationList">
-                        {club.clubLocatioun}
-                      </div>
-                    </div>
-                    <div className="createrClub">
-                      <div className="circular--landscape">
-                        <img
-                          class="circular--userPcc"
-                          src={club.createrId.userPicture}
-                          alt="user-pic"
-                        />
-                      </div>
+                          <div className="locationclub">
+                            {" "}
+                            <div className="icon">
+                              <MdLocationOn />
+                            </div>
+                            <div className="clubLocationList">
+                              {club.clubLocatioun}
+                            </div>
+                          </div>
+                          <div className="createrClub">
+                            <div className="circular--landscape">
+                              <img
+                                class="circular--userPcc"
+                                src={usersData[i].userPicture}
+                                alt="user-pic"
+                              />
+                            </div>
 
-                      <div className="clubuserLastName">
-                        {club.createrId.userLastName}
+                            <div className="clubuserLastName">
+                              {usersData[i].userLastName}
+                            </div>
+                            <div className="clubuserName">
+                              {usersData[i].userName}
+                            </div>
+                          </div>
+                        </div>
                       </div>
-                      <div className="clubuserName">
-                        {club.createrId.userName}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </Link>
-            ))}
+                    </Link>
+                  );
+              }
+            })}
           </div>
         </div>
       </div>
@@ -204,7 +210,7 @@ Clubs.propTypes = {
   getClubs: PropTypes.func,
 };
 const mapStateToProps = (state) => ({
-  clubs: state.clubsRed.clubs,
+  clubs: state.clubs.clubs,
 });
 
 export default connect(mapStateToProps, { getClubs })(Clubs);

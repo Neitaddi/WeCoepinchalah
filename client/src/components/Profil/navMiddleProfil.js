@@ -99,7 +99,7 @@ NavMiddleProfil.propTypes = {
   getClubs: PropTypes.func,
 };
 const mapStateToProps = (state) => ({
-  clubs: state.clubsRed.clubs,
+  clubs: state.clubs.clubs,
 });
 
 export default connect(mapStateToProps, { getClubs })(NavMiddleProfil);

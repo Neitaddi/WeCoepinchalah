@@ -3,7 +3,13 @@ const mongoose = require("mongoose");
 const postSchema = new mongoose.Schema(
   {
     posterId: {
-      type: String,
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "user",
+      required: true,
+    },
+    posterClub: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "club",
       required: true,
     },
     postMessage: {
