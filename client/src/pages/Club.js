@@ -5,7 +5,7 @@ import { getClubs } from "../js/actions/clubActions";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import { ImFilePicture } from "react-icons/im";
-
+import { HiOutlineSaveAs } from "react-icons/hi";
 import "./Club.css";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -172,28 +172,42 @@ const Club = (props) => {
                 alt="logo wecoepi"
               />
             </Link>
-            <div className="image-up">
-              <label htmlFor="imgInp" />
-              <img id="blah" src={clublist.clubPicture} />
-              <input
-                id="imgInp"
-                type="file"
-                onChange={(event) => uploadImage(event)}
-              />
+            <div className="leftCont">
+              <div className="image-up">
+                <img
+                  id="blah"
+                  className="profilIMG"
+                  src={clublist.clubPicture}
+                />
+                <div className="ModifierPhoto">
+                  <label htmlFor="imgInp" className="imgInp">
+                    modifier l'image
+                  </label>
+                  <input
+                    id="imgInp"
+                    type="file"
+                    className="fichierAddImg"
+                    onChange={(event) => uploadImage(event)}
+                  />
+                </div>
+                <div>
+                  <HiOutlineSaveAs
+                    className="saveIcon"
+                    onClick={sendPhotoOnClick}
+                    htmlFor="submit"
+                  />
+
+                  <input
+                    className="ajouterImg"
+                    type="submit"
+                    value="Envoyer"
+                    id="submit"
+                    name="submit"
+                  />
+                </div>
+              </div>
+              <div className="clubName">{clublist.clubName}</div>
             </div>
-            <div>
-              <label className="labelAddImg" htmlFor="submit">
-                <BsPersonBoundingBox onClick={sendPhotoOnClick} />
-              </label>
-              <input
-                className="ajouterImg"
-                type="submit"
-                value="Envoyer"
-                id="submit"
-                name="submit"
-              />
-            </div>
-            <div>{clublist.clubName}</div>
             {/* <div>{clublist.createrId._id}</div> */}
             {/* <SideBarProfilClub />
              */}
@@ -246,33 +260,33 @@ const Club = (props) => {
                   <div className="icon">
                     {isEmpty(video) && (
                       <>
-                        <ImFilePicture />
                         <input
                           type="file"
-                          id="file-upload"
-                          name="file"
+                          id="fileupload"
+                          name="file-upload"
+                          className="ajt"
                           accept=".jpg, .jpeg, .png"
                           onChange={(e) => handlePicture(e)}
                         />
                       </>
                     )}
                     {video && (
-                      <button onClick={() => setVideo("")}>
+                      <label className="delete" onClick={() => setVideo("")}>
                         Supprimer video
-                      </button>
+                      </label>
                     )}
                   </div>
                   {!isEmpty(error.format) && <p>{error.format}</p>}
                   {!isEmpty(error.maxSize) && <p>{error.maxSize}</p>}
                   <div className="btn-send">
                     {message || postPicture || video.length > 20 ? (
-                      <button className="cancel" onClick={cancelPost}>
+                      <label className="cancel" onClick={cancelPost}>
                         Annuler message
-                      </button>
+                      </label>
                     ) : null}
-                    <button className="send" onClick={handlePost}>
+                    <label className="send" onClick={handlePost}>
                       Envoyer
-                    </button>
+                    </label>
                   </div>
                 </div>
               </div>
@@ -351,11 +365,13 @@ const Club = (props) => {
                 alt="logo wecoepi"
               />
             </Link>
-            <div className="image-up">
-              <label htmlFor="imgInp" />
-              <img id="blah" src={clublist.clubPicture} />
+            <div className="leftCont">
+              <div className="image-up">
+                <label htmlFor="imgInp" />
+                <img id="blah" src={clublist.clubPicture} />
+              </div>
+              <div className="clubName">{clublist.clubName}</div>
             </div>
-            <div>{clublist.clubName}</div>
             {/* <div>{clublist.createrId._id}</div> */}
             {/* <SideBarProfilClub />
              */}

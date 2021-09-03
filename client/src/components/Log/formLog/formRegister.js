@@ -48,15 +48,13 @@ const SignUpForm = () => {
         },
       })
         .then((res) => {
-          console.log(res);
-          if (res.data.errors) {
-            userEmailError.innerHTML = res.data.errors.userEmail;
-            userNameError.innerHTML = res.data.errors.userName;
-            userLastNameError.innerHTML = res.data.errors.userLastName;
-            userPasswordError.innerHTML = res.data.errors.userPassword;
-          } else {
-            setFormSubmit(true);
-          }
+          // if (res.data.errors) {
+          //   userEmailError.innerHTML = res.data.errors.userEmail;
+          //   userNameError.innerHTML = res.data.errors.userName;
+          //   userLastNameError.innerHTML = res.data.errors.userLastName;
+          //   userPasswordError.innerHTML = res.data.errors.userPassword;
+          // } else {
+          setFormSubmit(true);
         })
         .catch((err) => console.log(err));
     }
@@ -142,9 +140,9 @@ const SignUpForm = () => {
           </label>
           <div className="terms error"></div>
 
-          <button className="submitFR" type="submit">
+          <label className="submitFR" type="submit">
             S'inscrire
-          </button>
+          </label>
         </form>
       )}
     </div>

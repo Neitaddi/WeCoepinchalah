@@ -64,9 +64,9 @@ export default function FormLogin() {
           />
           <div className="userPassword error"></div>
 
-          <button className="btn" type="submit">
-            S'inscrire
-          </button>
+          <label className="btn" type="submit">
+            Connexion
+          </label>
         </form>
       </div>
     </>

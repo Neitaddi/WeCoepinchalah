@@ -1,0 +1,78 @@
+.CardInfo {
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border-color: lightcoral;
+  border-style: solid;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.ClubNameInfo {
+  font-size: 40px;
+}
+.ClubCreaterInfo {
+  font-size: 20px;
+  background-color: lightcoral;
+  color: #fff;
+  padding: 2px 5px 2px 5px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+.ClubDescInfo {
+  max-width: 200px;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+.labelContact {
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+}
+.pointInfoClub {
+  /* border-style: solid; */
+  padding: 0px 30px 0px 30px;
+  font-size: 18px;
+}
+.contactClubInfo {
+  padding-left: 50px;
+  padding-bottom: 15px;
+}
+.contactL {
+  padding-top: 10px;
+  padding-left: 50px;
+}
+.ClubCategInfo {
+  padding-bottom: 5px;
+  align-items: center;
+}
+.catgIcon {
+  margin-right: 5px;
+}
+.locatIcon {
+  margin-right: 5px;
+}
+.webIcon {
+  margin-right: 5px;
+}
+.phoneIcon {
+  margin-right: 5px;
+}
+.EmailIcon {
+  margin-right: 5px;
+}
+
+.ClubWebSiteInfo {
+  padding-bottom: 5px;
+  align-items: center;
+}
+.ClubPhoneInfo {
+  padding-bottom: 5px;
+  align-items: center;
+}
+.ClubEmailInfo {
+  padding-bottom: 5px;
+  align-items: center;
+}

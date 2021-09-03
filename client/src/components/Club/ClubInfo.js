@@ -18,6 +18,7 @@ import { HiOutlineClipboardList } from "react-icons/hi";
 import { useDispatch, useSelector } from "react-redux";
 // import { uploadPictureClub } from "../js/actions/clubActions";
 import { BsPersonBoundingBox } from "react-icons/bs";
+import CardClubInfo from "./CardClubInfo";
 
 // ........................................................
 
@@ -98,14 +99,12 @@ const ClubInfo = (props) => {
           </div> */}
           <div role="main" className="buttomCb">
             <div>
-              {/* {clubs
-                .filter((club) => club._id == idC)
-                .map((club) => {
-                  for (let i = 0; i < usersData.length; i++) {
-                    if (club.createrId === usersData[i]._id)
-                      <div>{usersData[i].userName}</div>;
-                  }
-                })} */}
+              {usersData.map((user) => {
+                if (clublist.createrId === user._id)
+                  return (
+                    <CardClubInfo user={user} clublist={clublist} idC={idC} />
+                  );
+              })}
             </div>{" "}
           </div>
         </div>

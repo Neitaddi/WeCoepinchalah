@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import ModalUpdateProfil from "../components/Profil/ModalUpdateProfil";
 import "./Profil.css";
-
+import { HiOutlineSaveAs } from "react-icons/hi";
 import NavMiddleProfil from "../components/Profil/navMiddleProfil";
 import { FiEdit } from "react-icons/fi";
 import axios from "axios";
@@ -89,23 +89,34 @@ const Profil = () => {
           <div className="image-up">
             <label htmlFor="imgInp" />
             <img id="blah" src={userData.userPicture} />
-            <input
-              id="imgInp"
-              type="file"
-              onChange={(event) => uploadImage(event)}
-            />
-          </div>
-          <div>
-            <label className="labelAddImg" htmlFor="submit">
-              <BsPersonBoundingBox onClick={sendPhotoOnClick} />
-            </label>
-            <input
-              className="ajouterImg"
-              type="submit"
-              value="Envoyer"
-              id="submit"
-              name="submit"
-            />
+
+            <div className="ModifP">
+              {" "}
+              <label htmlFor="imgInp" className="imgInp">
+                modifier l'image
+              </label>
+              <input
+                id="imgInp"
+                type="file"
+                className="choisirImag"
+                onChange={(event) => uploadImage(event)}
+              />
+              <div>
+                <HiOutlineSaveAs
+                  onClick={sendPhotoOnClick}
+                  className="saveIcon"
+                  htmlFor="submit"
+                />
+
+                <input
+                  className="ajouterImg"
+                  type="submit"
+                  value="Envoyer"
+                  id="submit"
+                  name="submit"
+                />
+              </div>
+            </div>
           </div>
         </div>
         {LogLinks}

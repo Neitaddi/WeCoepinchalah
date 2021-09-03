@@ -94,7 +94,7 @@ button {
   justify-content: center;
   align-items: center;
   padding-left: 0%;
-  padding-bottom: 2%;
+  padding-bottom: 12.5%;
   /* line-height: 1.8; */
   /* color: #141414; */
   /* border-color: #ea5652;
@@ -116,7 +116,7 @@ button {
   justify-content: center;
   align-items: center;
   line-height: 1.9;
-  padding-left: 50px;
+
   color: #141414;
   /* border-color: #ea5652;
   border-style: solid; */

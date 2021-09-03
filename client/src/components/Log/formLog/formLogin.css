@@ -12,18 +12,51 @@
   padding-left: 0;
 }
 .inputLogin {
+  margin-bottom: 12px;
+  padding: 5px 15px 5px 15px;
+
+  /* s */
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-color: #dbdbdb;
   border-style: solid;
-  border-radius: 10px;
-  border-color: #fb544e;
-  padding: 3px 20px 3px 20px;
-  margin-right: 50px;
 }
+
+.inputLogin:focus {
+  outline: none;
+}
+.inputLogin:hover {
+  border-color: #ea5652;
+  border-style: solid;
+}
+
 .btn {
-  margin-top: 30px;
-  margin-left: 50px;
+  color: #ffffff;
+  background-color: lightcoral;
+  padding: 8px 8px 8px 8px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  margin-left: 60px;
+
+  font-size: 13px;
 }
 .btn:hover {
-  margin-top: 30px;
-  margin-left: 50px;
+  color: #ffffffea;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  background-color: lightcoral;
+
+  padding: 8px 8px 8px 8px;
+  border-radius: 20ps;
+
   cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
 }

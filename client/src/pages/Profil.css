@@ -80,3 +80,10 @@
   margin-top: 20px;
   cursor: pointer;
 }
+.choisirImag {
+  display: none;
+}
+.ModifP {
+  display: flex;
+  padding-bottom: 20px;
+}
