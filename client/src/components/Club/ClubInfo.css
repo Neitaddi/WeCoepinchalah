@@ -1,0 +1,9 @@
+.clubNameInfo {
+  font-size: 40px;
+}
+.cadrePhoto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}

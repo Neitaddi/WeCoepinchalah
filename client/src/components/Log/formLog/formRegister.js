@@ -17,10 +17,10 @@ const SignUpForm = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     const terms = document.getElementById("terms");
-    const userEmailError = document.querySelector(".userEmail.error");
-    const userNameError = document.querySelector(".userName.error");
-    const userLastNameError = document.querySelector(".userLastName.error");
-    const userPasswordError = document.querySelector(".userPassword.error");
+    // const userEmailError = document.querySelector(".userEmail.error");
+    // const userNameError = document.querySelector(".userName.error");
+    // const userLastNameError = document.querySelector(".userLastName.error");
+    // const userPasswordError = document.querySelector(".userPassword.error");
     const userControlPasswordError = document.querySelector(
       ".password-confirm.error"
     );
@@ -46,8 +46,8 @@ const SignUpForm = () => {
           userLastName,
           userPassword,
         },
-      })
-        .then((res) => {
+      }).then(
+        (res) => {
           // if (res.data.errors) {
           //   userEmailError.innerHTML = res.data.errors.userEmail;
           //   userNameError.innerHTML = res.data.errors.userName;
@@ -55,8 +55,10 @@ const SignUpForm = () => {
           //   userPasswordError.innerHTML = res.data.errors.userPassword;
           // } else {
           setFormSubmit(true);
-        })
-        .catch((err) => console.log(err));
+        }
+        // }
+      );
+      // .catch((err) => console.log(err));
     }
   };
 
@@ -140,9 +142,9 @@ const SignUpForm = () => {
           </label>
           <div className="terms error"></div>
 
-          <label className="submitFR" type="submit">
+          <button className="submitFR" type="submit">
             S'inscrire
-          </label>
+          </button>
         </form>
       )}
     </div>

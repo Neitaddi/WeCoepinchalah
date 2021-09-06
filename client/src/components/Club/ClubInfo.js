@@ -19,7 +19,7 @@ import { useDispatch, useSelector } from "react-redux";
 // import { uploadPictureClub } from "../js/actions/clubActions";
 import { BsPersonBoundingBox } from "react-icons/bs";
 import CardClubInfo from "./CardClubInfo";
-
+import "./ClubInfo.css";
 // ........................................................
 
 const ClubInfo = (props) => {
@@ -54,11 +54,13 @@ const ClubInfo = (props) => {
               alt="logo wecoepi"
             />
           </Link>
-          <div className="image-up">
-            <label htmlFor="imgInp" />
-            <img id="blah" src={clublist.clubPicture} />
+          <div className="cadrePhoto">
+            <div className="image-up">
+              <label htmlFor="imgInp" />
+              <img id="blah" src={clublist.clubPicture} />
+            </div>
+            <div className="clubNameInfo">{clublist.clubName}</div>
           </div>
-          <div>{clublist.clubName}</div>
           {/* <div>{clublist.createrId._id}</div> */}
           {/* <SideBarProfilClub />
            */}

@@ -1,6 +1,7 @@
 const postModel = require("../Models/postModel");
 const clubModel = require("../Models/clubModel");
 const userModel = require("../Models/userModel");
+
 const { uploadErrors } = require("../utils/errorsUtils");
 const ObjectID = require("mongoose").Types.ObjectId;
 const fs = require("fs");
@@ -57,17 +58,16 @@ module.exports.createPost = async (req, res) => {
     const post = await newPost.save();
     console.log(req.params);
     // add to the follower list
-    await clubModel
-      .findByIdAndUpdate(
-        req.params.id,
-        { $addToSet: { clubPostes: post._id } },
-        { new: true, upsert: true },
-        (err, docs) => {
-          if (!err) res.status(201).json(docs);
-          else return res.status(400).json(err);
-        }
-      )
-      .populate("posterId");
+    await clubModel.findByIdAndUpdate(
+      req.params.id,
+      { $addToSet: { clubPostes: post._id } },
+      { new: true, upsert: true },
+      (err, docs) => {
+        if (!err) res.status(201).json(docs);
+        else return res.status(400).json(err);
+      }
+    );
+
     return res.status(201).json(post);
   } catch (err) {
     return res.status(400).send(err);

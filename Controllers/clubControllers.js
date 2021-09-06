@@ -2,14 +2,14 @@ const clubModel = require("../Models/clubModel");
 const userModel = require("../Models/userModel");
 
 //readPost
-module.exports.readclub = (req, res) => {
-  clubModel
-    .find((err, docs) => {
-      if (!err) res.send(docs);
-      else console.log("Error to get data : " + err);
-    })
-    .sort({ createdAt: -1 });
-};
+// module.exports.readclub = (req, res) => {
+//   clubModel
+//     .find((err, docs) => {
+//       if (!err) res.send(docs);
+//       else console.log("Error to get data : " + err);
+//     })
+//     .sort({ createdAt: -1 });
+// };
 
 module.exports.clubInfo = async (req, res) => {
   try {
@@ -37,17 +37,16 @@ module.exports.createClub = async (req, res) => {
   try {
     const club = await newClub.save();
     // add to the follower list
-    await userModel
-      .findByIdAndUpdate(
-        req.params.id,
-        { $addToSet: { userClubs: club._id } },
-        { new: true, upsert: true },
-        (err, docs) => {
-          if (!err) res.status(201).json(docs);
-          else return res.status(400).json(err);
-        }
-      )
-      .populate("createrId");
+    await userModel.findByIdAndUpdate(
+      req.params.id,
+      { $addToSet: { userClubs: club._id } },
+      { new: true, upsert: true },
+      (err, docs) => {
+        if (!err) res.status(201).json(docs);
+        else return res.status(400).json(err);
+      }
+    );
+
     return res.status(201).json(club);
   } catch (err) {
     return res.status(400).send(err);
@@ -56,9 +55,9 @@ module.exports.createClub = async (req, res) => {
 
 module.exports.AllClubsInfo = async (req, res) => {
   try {
-    const club = await clubModel.find();
+    const club = await clubModel.find().select();
     res.send(club);
-    console.log(club);
+    console.log("clubs", club);
   } catch (error) {
     console.log(error);
   }

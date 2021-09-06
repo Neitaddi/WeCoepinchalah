@@ -8,7 +8,6 @@ import "./formRegisterModalClub.css";
 const FormRegisterModelClub = () => {
   // ('posterId', userData._id);
   const userData = useSelector((state) => state.userReducer);
-  const clubData = useSelector((state) => state.clubReducer);
 
   const [clubName, setClubName] = useState("");
   const [clubCategorie, setClubCategorie] = useState("");

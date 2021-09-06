@@ -7,6 +7,7 @@ const cors = require("cors");
 const userRouters = require("./routes/userRoutes.js");
 const postRouters = require("./routes/postRouters");
 const clubRouters = require("./routes/clubRouters");
+const departmentRouters = require("./routes/departmentRouters");
 
 //require dotenv
 require("dotenv").config({ path: "./config/.env" });
@@ -54,6 +55,8 @@ app.use("/api/user", userRouters);
 app.use("/api/post", postRouters);
 //club routers
 app.use("/api/club", clubRouters);
+//department routers
+app.use("/api/department", departmentRouters);
 
 //lanch server
 app.listen(process.env.PORT, (error) =>

@@ -7,7 +7,7 @@ import {
   EDIT_COMMENT,
   DELETE_COMMENT,
 } from "../constatnts/postActionTypes";
-const initialState = { posts: [] };
+const initialState = { postes: [] };
 
 export default function postsReducer(state = initialState, action) {
   switch (action.type) {

@@ -5,7 +5,7 @@ import clubReducer from "./clubReducer";
 import usersReducer from "./usersReducer";
 import postsReducer from "./postsReducer";
 import errorReducer from "./errorReducer";
-
+import departmentsReducer from "./departmentsReducer";
 export default combineReducers({
   postes: postsReducer,
   usersReducer,
@@ -13,4 +13,5 @@ export default combineReducers({
   errorReducer,
   clubReducer,
   clubs: clubsReducer,
+  departments: departmentsReducer,
 });

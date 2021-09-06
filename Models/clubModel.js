@@ -59,6 +59,7 @@ const clubSchema = new mongoose.Schema(
         ref: "post",
       },
     ],
+    clubDepartments: { type: [String] },
   },
 
   {

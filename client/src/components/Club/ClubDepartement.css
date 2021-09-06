@@ -1,0 +1,67 @@
+.departmentCart {
+  display: flex;
+  /* border-style: solid; */
+  margin-top: 20px;
+  margin-left: 20px;
+}
+.formCardDep {
+  width: 210px;
+  height: 280px;
+  border-style: solid;
+  border-color: lightcoral;
+  border-width: 1px;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+
+  margin-left: 10px;
+  display: flex;
+
+  flex-direction: column;
+  background-color: #ffffffa2;
+}
+.formCardDep:hover {
+  width: 210px;
+  height: 280px;
+  /* border-style: solid;
+    border-color: black; */
+  border-radius: 10px;
+  /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+  margin-left: 10px;
+  display: flex;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  cursor: pointer;
+}
+.clubPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+.clubNamePage {
+  font-size: 30px;
+}
+.buttonAjouterDepartment {
+  color: #ffffff;
+  background-color: lightcoral;
+  padding: 15px 20px 15px 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  margin-left: 350px;
+  font-size: 13px;
+}
+.buttonAjouterDepartment:hover {
+  color: #ffffffea;
+
+  background-color: lightcoral;
+
+  padding: 15px 20px 15px 20px;
+  border-radius: 20ps;
+  margin-left: 350px;
+  cursor: pointer;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+}

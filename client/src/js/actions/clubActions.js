@@ -51,8 +51,6 @@ export const addClub = (
       clubEmail,
       clubWebSite,
     },
-  }).then((res) => {
-    window.location = `/club/${res.data._id}`;
   });
 };
 //get  Club
