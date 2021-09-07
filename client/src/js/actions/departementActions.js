@@ -21,17 +21,25 @@ export const addDepartment = (
   departmentDescription,
   departmentRole
 ) => {
-  return axios({
-    method: "post",
-    url: `${process.env.REACT_APP_API_URL}api/department/` + departmentClub,
-    data: {
-      departmentCreaterId,
-      departmentClub,
-      departmentBoss,
-      departmentDescription,
-      departmentRole,
-    },
-  });
+  const data = {
+    departmentCreaterId,
+    departmentClub,
+    departmentBoss,
+    departmentDescription,
+    departmentRole,
+  };
+
+  return axios
+    .post(
+      `${process.env.REACT_APP_API_URL}api/department/${departmentClub}`,
+      data
+    )
+    .then((data) => {
+      console.log(data);
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
 // export const updateDepartment = (

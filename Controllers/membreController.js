@@ -1,22 +1,21 @@
+const membreModel = require("../Models/membreModel");
 const departmentModel = require("../Models/departmentModel");
-const clubModel = require("../Models/clubModel");
 const ObjectID = require("mongoose").Types.ObjectId;
 
-module.exports.createDepartment = async (req, res) => {
-  const newDepartment = new departmentModel({
-    departmentCreaterId: req.body.departmentCreaterId,
-    departmentClub: req.body.departmentClub,
-    departmentBoss: req.body.departmentBoss,
-    departmentDescription: req.body.departmentDescription,
-    departmentRole: req.body.departmentRole,
+module.exports.createMembre = async (req, res) => {
+  const newMembre = new membreModel({
+    membreCreaterId: req.body.membreCreaterId,
+    membreDepartment: req.body.membreDepartment,
+    membreBoss: req.body.membreBoss,
+    membreRole: req.body.membreRole,
   });
   try {
-    const department = await newDepartment.save();
+    const membre = await newMembre.save();
     console.log(req.params);
     // add to the follower list
-    await clubModel.findByIdAndUpdate(
+    await departmentModel.findByIdAndUpdate(
       req.params.id,
-      { $addToSet: { clubDepartments: department._id } },
+      { $addToSet: { departmentMember: membre._id } },
       { new: true, upsert: true },
       (err, docs) => {
         if (!err) res.status(201).json(docs);
@@ -24,17 +23,17 @@ module.exports.createDepartment = async (req, res) => {
       }
     );
 
-    return res.status(201).json(department);
+    return res.status(201).json(membre);
   } catch (err) {
     return res.status(400).send(err);
   }
 };
 
-module.exports.AllDepartmentsInfo = async (req, res) => {
+module.exports.AllMembresInfo = async (req, res) => {
   try {
-    const department = await departmentModel.find().select();
-    res.send(department);
-    // console.log("department", department);
+    const membre = await membreModel.find().select();
+    res.send(membre);
+    console.log("membre", membre);
   } catch (error) {
     console.log(error);
   }
@@ -42,16 +41,15 @@ module.exports.AllDepartmentsInfo = async (req, res) => {
 
 // ..................................
 //update department
-module.exports.departmentUpdate = (req, res) => {
+module.exports.membreUpdate = (req, res) => {
   if (!ObjectID.isValid(req.params.id))
     return res.status(400).send("ID unknow : " + req.params.id);
   const updatedRecord = {
-    departmentBoss: req.body.departmentBoss,
-    departmentDescription: req.body.departmentDescription,
-    departmentRole: req.body.departmentRole,
+    membreBoss: req.body.membreBoss,
+    membreRole: req.body.membreRole,
   };
   try {
-    departmentModel.findByIdAndUpdate(
+    membreModel.findByIdAndUpdate(
       req.params.id,
       {
         $set: updatedRecord,
@@ -67,17 +65,17 @@ module.exports.departmentUpdate = (req, res) => {
   }
 };
 
-module.exports.deleteDepartment = async (req, res) => {
+module.exports.deleteMembre = async (req, res) => {
   if (!ObjectID.isValid(req.params.id))
     return res.status(400).send("ID unknown : " + req.params.id);
   try {
-    await departmentModel.findByIdAndRemove(req.params.id, (err, docs) => {
+    await membreModel.findByIdAndRemove(req.params.id, (err, docs) => {
       if (!err) res.send(docs);
       else console.log("Delete error : " + err);
     });
-    await clubModel.findByIdAndUpdate(
+    await departmentModel.findByIdAndUpdate(
       req.body.id,
-      { $pull: { clubDepartments: req.params.id } },
+      { $pull: { departmentMember: req.params.id } },
       { new: true, upsert: true },
       (err, docs) => {
         if (!err) res.status(201).json(docs);

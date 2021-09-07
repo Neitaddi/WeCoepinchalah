@@ -9,4 +9,5 @@ router.get("/", clubControllers.AllClubsInfo);
 router.get("/:id", clubControllers.clubInfo);
 //upload file
 router.patch("/upload/:id", uploadController.uploadProfilClub);
+router.delete("/:id", clubControllers.deleteClub);
 module.exports = router;

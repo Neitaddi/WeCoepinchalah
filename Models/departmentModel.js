@@ -4,17 +4,14 @@ const departmentSchema = new mongoose.Schema(
   {
     departmentCreaterId: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
       ref: "user",
     },
     departmentClub: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
       ref: "club",
     },
     departmentBoss: {
       type: mongoose.Schema.Types.ObjectId,
-      required: true,
       ref: "user",
     },
     departmentMember: {
@@ -23,12 +20,10 @@ const departmentSchema = new mongoose.Schema(
     departmentDescription: {
       type: String,
       max: 1024,
-      required: true,
     },
     departmentRole: {
       type: String,
       max: 1024,
-      required: true,
     },
   },
   {

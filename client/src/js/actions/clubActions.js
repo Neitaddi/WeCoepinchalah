@@ -87,3 +87,16 @@ export const uploadPictureClub = (data, id) => {
       .catch((err) => console.log(err));
   };
 };
+// export const deleteclub = (clubId, createrId) => {
+//   return (dispatch) => {
+//     return axios({
+//       method: "delete",
+//       url: `${process.env.REACT_APP_API_URL}api/club/${clubId}`,
+//       data: { id: createrId },
+//     })
+//       .then((res) => {
+//         dispatch({ type: DELETE_POST, payload: { clubId, createrId } });
+//       })
+//       .catch((err) => console.log(err));
+//   };
+// };

@@ -13,7 +13,7 @@ const CreateDepartment = (props) => {
   const usersData = useSelector((state) => state.usersReducer);
   const userData = useSelector((state) => state.userReducer);
   console.log("user", usersData);
-  console.log("userData", userData);
+  console.log("userData", userData.userEmail);
   const idC = props.match.params.club_id;
 
   //   console.log("idC", idC);
@@ -29,10 +29,14 @@ const CreateDepartment = (props) => {
   const dispatch = useDispatch();
   const getEmailBoss = (e) => {
     const searchEmail = e.target.value;
-    const filterEmail = usersData.filter((user) => {
-      return user.userEmail.includes(searchEmail);
-    });
-    setDepartmentName(filterEmail);
+    console.log("e.target.value", searchEmail);
+    const filterEmail = usersData
+      .filter((user) => user.userEmail === searchEmail)
+      .map((user) => {
+        return user._id;
+      });
+    setDepartmentBoss(filterEmail);
+    console.log("filterEmailjdidi", filterEmail);
   };
 
   const handleCreteClub = async (e) => {
@@ -48,6 +52,7 @@ const CreateDepartment = (props) => {
       )
     );
   };
+
   //   console.log("clublist1", clublist);
   return (
     <div>
@@ -67,15 +72,15 @@ const CreateDepartment = (props) => {
             type="text"
             placeholder="L'Email de Chef Département (Obligatoire)"
             onChange={getEmailBoss}
-            value={departmentName}
+            // value={departmentName}
           />
           <input
             className="inputDepart"
             id="inputDepartC"
             type="text"
             placeholder="Nom de Département (Obligatoire)"
-            onChange={(e) => setDepartmentBoss(e.target.value)}
-            value={departmentBoss}
+            onChange={(e) => setDepartmentName(e.target.value)}
+            value={departmentName}
           />
           <textarea
             className="textAria"
