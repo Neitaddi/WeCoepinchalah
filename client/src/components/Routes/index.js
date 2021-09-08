@@ -17,6 +17,9 @@ import ClubTache from "../Club/ClubTache";
 import Club from "../../pages/Club";
 import DepartmentInfo from "../Club/DepartmentInfo";
 import CreateDepartment from "../Club/CreateDepartment";
+import MembreInfo from "../Club/MembreInfo";
+import CreateMembre from "../Club/CreateMembre";
+import UpdateDepartment from "../Club/updateDepartment";
 const index = () => {
   return (
     <div>
@@ -39,10 +42,21 @@ const index = () => {
             exact
             component={DepartmentInfo}
           />
+          <Route path="/membreinfo/:membre_id" exact component={MembreInfo} />
           <Route
             path="/createdepartment/:club_id"
             exact
             component={CreateDepartment}
+          />
+          <Route
+            path="/updatedepartment/:department_id"
+            exact
+            component={UpdateDepartment}
+          />
+          <Route
+            path="/createmembre/:membre_id"
+            exact
+            component={CreateMembre}
           />
 
           <Redirect to="/" />

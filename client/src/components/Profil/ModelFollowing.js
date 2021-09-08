@@ -4,6 +4,7 @@ import React, { useRef, useEffect, useCallback } from "react";
 import { useSpring, animated } from "react-spring";
 
 import { MdClose } from "react-icons/md";
+import ListDepartmentUser from "./ListDepartmentUser";
 // import FormUpdateProfile from "./formUpdateProfile";
 
 const ModelFollowing = ({ showModelFollowing, setShowModelFollowing }) => {
@@ -49,7 +50,7 @@ const ModelFollowing = ({ showModelFollowing, setShowModelFollowing }) => {
           <animated.div style={animation}>
             <div className=" ModalWrapperFollowing">
               <div className="ModalContentFollowing">
-                {/* <FormUpdateProfile /> */}
+                <ListDepartmentUser />
               </div>
               <div
                 className="CloseModalButtonFollowing"

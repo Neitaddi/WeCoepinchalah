@@ -1,6 +1,10 @@
 import axios from "axios";
 
-import { GET_DEPARTMENTS } from "../constatnts/departmentsTypes";
+import {
+  GET_DEPARTMENTS,
+  UPDATE_DEPARTMENT,
+  DELETE_DEPARTMENT,
+} from "../constatnts/departmentsTypes";
 
 export const getDepartments = () => {
   return (dispatch) => {
@@ -42,26 +46,28 @@ export const addDepartment = (
     });
 };
 
-// export const updateDepartment = (
-//   departmentId,
-//   departmentBoss,
-//   departmentDescription
-// ) => {
-//   return (dispatch) => {
-//     return axios({
-//       method: "put",
-//       url: `${process.env.REACT_APP_API_URL}api/department/` + departmentId,
-//       data: {
-//         departmentBoss,
-//         departmentDescription,
-//       },
-//     })
-//       .then((res) => {
-//         dispatch({ type: UPDATE_DEPARTMENT, payload: res.data });
-//       })
-//       .catch((err) => console.log(err));
-//   };
-// };
+export const updateDepartment = (
+  departmentId,
+  departmentBoss,
+  departmentDescription,
+  departmentRole
+) => {
+  return (dispatch) => {
+    return axios({
+      method: "put",
+      url: `${process.env.REACT_APP_API_URL}api/department/` + departmentId,
+      data: {
+        departmentBoss,
+        departmentDescription,
+        departmentRole,
+      },
+    })
+      .then((res) => {
+        dispatch({ type: UPDATE_DEPARTMENT, payload: res.data });
+      })
+      .catch((err) => console.log(err));
+  };
+};
 
 // //get  Department
 // export const getDepartment = (did) => {
@@ -74,3 +80,17 @@ export const addDepartment = (
 //       .catch((err) => console.log(err));
 //   };
 // };
+
+export const deleteDepartment = (departmentId, departmentClub) => {
+  return (dispatch) => {
+    return axios({
+      method: "delete",
+      url: `${process.env.REACT_APP_API_URL}api/department/${departmentId}`,
+      data: { id: departmentClub },
+    })
+      .then((res) => {
+        dispatch({ type: DELETE_DEPARTMENT, payload: { departmentId } });
+      })
+      .catch((err) => console.log(err));
+  };
+};

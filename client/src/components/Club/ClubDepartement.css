@@ -3,6 +3,9 @@
   /* border-style: solid; */
   margin-top: 20px;
   margin-left: 20px;
+
+  justify-content: center;
+  flex-wrap: wrap;
 }
 .formCardDep {
   width: 210px;

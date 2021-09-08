@@ -88,8 +88,14 @@ const Profil = () => {
           {/* <UploadImg /> */}
           <div className="image-up">
             <label htmlFor="imgInp" />
-            <img id="blah" src={userData.userPicture} />
 
+            <div className="circular--landscape">
+              <img
+                class="circular--clubs"
+                src={userData.userPicture}
+                alt="user-pic"
+              />
+            </div>
             <div className="ModifP">
               {" "}
               <label htmlFor="imgInp" className="imgInp">

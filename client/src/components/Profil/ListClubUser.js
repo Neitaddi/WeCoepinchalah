@@ -16,7 +16,7 @@ const ListClubUser = (props) => {
       setClublist(props.clubs);
     }
   }, [props.clubs]);
-  console.log("lista4", clublist);
+  // console.log("lista4", clublist);
 
   return (
     <div>

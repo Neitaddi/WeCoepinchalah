@@ -9,7 +9,10 @@
     rgba(14, 30, 37, 0.1) 0px 2px 16px 0px;
   margin-right: 10px;
 }
-
+.depSpan {
+  font-weight: bold;
+  color: lightcoral;
+}
 .clubli {
   display: flex;
   align-items: center;

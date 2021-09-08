@@ -1,0 +1,60 @@
+.membreCartinfo {
+  display: flex;
+  justify-content: center;
+  padding: 120px;
+}
+.cardCenter {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+    rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+    rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+  padding: 50px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+}
+.userDataMembre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.memDataMembre {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.membrelogo {
+  position: fixed;
+  right: 600px;
+  bottom: 500px;
+}
+.userNames {
+  display: flex;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.names {
+  margin-right: 5px;
+}
+.depName {
+  font-size: 20px;
+}
+.memRole {
+  margin-top: 10px;
+
+  align-items: center;
+  background-color: rgba(240, 128, 128, 0.705);
+  padding: 2px 5px 2px 5px;
+}
+.tempDe {
+  border-style: solid;
+  border-color: lightcoral;
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+  margin-top: 10px;
+  border-width: 1px;
+  font-size: 13px;
+}

@@ -1,24 +1,34 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
-import { connect, useSelector } from "react-redux";
+import { connect, useDispatch, useSelector } from "react-redux";
 import { getClubs } from "../../js/actions/clubActions";
-import { getDepartments } from "../../js/actions/departementActions";
+import {
+  deleteDepartment,
+  getDepartments,
+} from "../../js/actions/departementActions";
+import CardMembre from "./CardMembre";
+import { getMembres } from "../../js/actions/membreActions";
 import { BsInfoCircle } from "react-icons/bs";
 import { BsAward } from "react-icons/bs";
 import { GiQueenCrown } from "react-icons/gi";
+import { HiOutlinePencilAlt } from "react-icons/hi";
+import { AiOutlineDelete } from "react-icons/ai";
 import "./DepartmentInfo.css";
 import { Link } from "react-router-dom";
 const DepartmentInfo = (props) => {
   const [clublist, setClublist] = useState(props.clubs);
+  const [membres, setMembres] = useState(props.membres);
   const [department, setDepartment] = useState({});
   const usersData = useSelector((state) => state.usersReducer);
   console.log("usersData", usersData);
   const idD = props.match.params.department_id;
-  console.log("idD", idD);
-  console.log("clublist", clublist);
+  // console.log("idD", idD);
+  // console.log("clublist", clublist);
+
   useEffect(() => {
     props.getClubs().then(() => {});
     props.getDepartments().then(() => {});
+    props.getMembres().then(() => {});
   }, []);
   useEffect(() => {
     if (props.clubs) {
@@ -33,6 +43,16 @@ const DepartmentInfo = (props) => {
     }
   }, [props.departments]);
   console.log("depart", department);
+  useEffect(() => {
+    if (props.membres) {
+      setMembres(props.membres);
+    }
+  }, [props.membres]);
+  console.log("membres", membres);
+  const dispatch = useDispatch();
+  const handleDelete = () =>
+    dispatch(deleteDepartment(idD, department.departmentClub));
+  console.log("department.departmentClub", department.departmentClub);
 
   return (
     <div className="departmentInfo">
@@ -89,14 +109,52 @@ const DepartmentInfo = (props) => {
                         </div>
                       </div>
                     </div>
-                    <label className="buttonAjouterMembre">
-                      Ajouter un Membre
-                    </label>
+                    <div>
+                      <Link to={"/createmembre/" + department._id}>
+                        <label className="buttonAjouterMembre">
+                          Ajouter un Membre
+                        </label>
+                      </Link>
+                      <Link to={"/updatedepartment/" + department._id}>
+                        <HiOutlinePencilAlt />
+                      </Link>
+
+                      <span
+                        onClick={() => {
+                          if (
+                            window.confirm(
+                              `Voulez-vous supprimer le departement ${department.departmentDescription} ?`
+                            )
+                          ) {
+                            handleDelete();
+                          }
+                        }}
+                      >
+                        <AiOutlineDelete />
+                      </span>
+                    </div>
                   </div>
                 );
             })}
         </div>
-        <div className="BottomRightDepartmentInfo">hiin</div>
+        <div className="BottomRightDepartmentInfo">
+          <div className="departmentCart">
+            {department.departmentMember &&
+              department.departmentMember.map((membre) => {
+                for (let i = 0; i < membres.length; i++) {
+                  if (membre === membres[i]._id)
+                    return (
+                      <CardMembre
+                        membre={membres[i]}
+                        clublist={clublist}
+                        department={department}
+                        idD={idD}
+                      />
+                    );
+                }
+              })}
+          </div>
+        </div>
       </div>
     </div>
   );
@@ -105,20 +163,24 @@ const DepartmentInfo = (props) => {
 DepartmentInfo.propTypes = {
   getClubs: PropTypes.func,
   getDepartments: PropTypes.func,
+  getMembres: PropTypes.func,
 };
 const mapStateToProps = (state, ownProps) => {
-  console.log("ownProps", ownProps);
+  // console.log("ownProps", ownProps);
   const idD = ownProps.match.params.department_id;
-  console.log("idd", idD);
+  // console.log("idd", idD);
 
   return {
     clubs: state.clubs.clubs,
     departments: state.departments.departments.find(
       (department) => department._id === idD
     ),
+    membres: state.membres.membres,
   };
 };
 
-export default connect(mapStateToProps, { getClubs, getDepartments })(
-  DepartmentInfo
-);
+export default connect(mapStateToProps, {
+  getClubs,
+  getDepartments,
+  getMembres,
+})(DepartmentInfo);

@@ -1,31 +1,31 @@
 import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getClubs } from "../../js/actions/clubActions";
-import { useDispatch, useSelector } from "react-redux";
+import { getDepartments } from "../../js/actions/departementActions";
+import { addMembre } from "../../js/actions/membreActions";
 import { Link } from "react-router-dom";
-import { addDepartment } from "../../js/actions/departementActions";
-import "./CreateDepartment.css";
-const CreateDepartment = (props) => {
-  const [clublist, setClublist] = useState({});
-  const [departmentName, setDepartmentName] = useState("");
-  const [departmentBoss, setDepartmentBoss] = useState("");
-  const [departmentRole, setDepartmentRole] = useState("");
+import { useDispatch, useSelector } from "react-redux";
+
+const CreateMembre = (props) => {
+  const [department, setDepartment] = useState({});
+  const idD = props.match.params.membre_id;
+  console.log("idD", idD);
   const usersData = useSelector((state) => state.usersReducer);
   const userData = useSelector((state) => state.userReducer);
   console.log("user", usersData);
   console.log("userData", userData.userEmail);
-  const idC = props.match.params.club_id;
+  const [membreRole, setMembreRole] = useState("");
+  const [membreBoss, setMembreBoss] = useState("");
 
-  //   console.log("idC", idC);
   useEffect(() => {
-    props.getClubs().then(() => {});
+    props.getDepartments().then(() => {});
   }, []);
   useEffect(() => {
-    if (props.clubs) {
-      setClublist(props.clubs);
+    if (props.departments) {
+      setDepartment(props.departments);
     }
-  }, [props.clubs]);
+  }, [props.departments]);
+  console.log("department", department);
 
   const dispatch = useDispatch();
   const getEmailBoss = (e) => {
@@ -36,22 +36,14 @@ const CreateDepartment = (props) => {
       .map((user) => {
         return user._id;
       });
-    setDepartmentBoss(filterEmail);
+    setMembreBoss(filterEmail);
     console.log("filterEmailjdidi", filterEmail);
   };
 
   const handleCreteClub = async (e) => {
     e.preventDefault();
 
-    dispatch(
-      addDepartment(
-        userData._id,
-        idC,
-        departmentBoss,
-        departmentName,
-        departmentRole
-      )
-    );
+    dispatch(addMembre(userData._id, idD, membreBoss, membreRole));
   };
 
   //   console.log("clublist1", clublist);
@@ -65,7 +57,7 @@ const CreateDepartment = (props) => {
             alt="logo wecoepi"
           />
         </Link>
-        <div className="labelDepartment">Créer un Département</div>
+        <div className="labelDepartment">Créer un Membre</div>
         <div className="centerform">
           <input
             className="inputDepart"
@@ -75,14 +67,7 @@ const CreateDepartment = (props) => {
             onChange={getEmailBoss}
             // value={departmentName}
           />
-          <input
-            className="inputDepart"
-            id="inputDepart"
-            type="text"
-            placeholder="Nom de Département (Obligatoire)"
-            onChange={(e) => setDepartmentName(e.target.value)}
-            value={departmentName}
-          />
+
           <textarea
             className="textAriaDep"
             placeholder="Description  (Obligatoire)"
@@ -90,8 +75,8 @@ const CreateDepartment = (props) => {
             name="desc"
             rows="5"
             cols="33"
-            onChange={(e) => setDepartmentRole(e.target.value)}
-            value={departmentRole}
+            onChange={(e) => setMembreRole(e.target.value)}
+            // value={membreRole}
           />
           <label className="btnCreateDepartment" onClick={handleCreteClub}>
             Créer un département
@@ -102,18 +87,20 @@ const CreateDepartment = (props) => {
   );
 };
 
-CreateDepartment.propTypes = {
-  getClubs: PropTypes.func,
+CreateMembre.propTypes = {
+  getDepartments: PropTypes.func,
 };
 const mapStateToProps = (state, ownProps) => {
   console.log(ownProps);
 
-  const idC = ownProps.match.params.club_id;
-  //   console.log(idC);
+  const idD = ownProps.match.params.membre_id;
+  //   console.log("idD", idD);
 
   return {
-    clubs: state.clubs.clubs.find((club) => club._id === idC),
+    departments: state.departments.departments.find(
+      (department) => department._id === idD
+    ),
   };
 };
 
-export default connect(mapStateToProps, { getClubs })(CreateDepartment);
+export default connect(mapStateToProps, { getDepartments })(CreateMembre);

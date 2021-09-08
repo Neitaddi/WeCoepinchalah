@@ -133,6 +133,7 @@ body {
 
   margin-left: 10px;
   display: flex;
+  margin-top: 10px;
 
   flex-direction: column;
   background-color: #ffffffa2;
@@ -155,6 +156,8 @@ body {
   overflow-y: scroll;
   height: 60vh;
   width: 100%;
+  flex-wrap: wrap;
+  padding-bottom: 10px;
 }
 
 .scrollber::-webkit-scrollbar {
@@ -182,6 +185,17 @@ body {
   border-radius: 50%;
   width: 150px;
   height: 150px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #c9c8c8;
+  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+    rgba(14, 30, 37, 0.1) 0px 2px 16px 0px;
+  margin-right: 5px;
+}
+.circular--club {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
   border-width: 1px;
   border-style: solid;
   border-color: #c9c8c8;

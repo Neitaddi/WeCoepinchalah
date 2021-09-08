@@ -73,6 +73,7 @@ const ClubDepartement = (props) => {
                 alt="user-pic"
               />
             </div>
+
             <div className="clubNamePage">{clublist.clubName}</div>
           </div>
           {/* <div>{clublist.createrId._id}</div> */}

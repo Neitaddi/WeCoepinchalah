@@ -1,24 +1,23 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
-import "./CardDepartment.css";
-const CardDepartment = ({ department, clublist, idC }) => {
+import "./CardMembre.css";
+const CardMembre = ({ membre, clublist, department, idD }) => {
   const usersData = useSelector((state) => state.usersReducer);
   console.log(usersData);
   return (
     <div className="cardDep">
       {usersData &&
         usersData.map((user) => {
-          if (user._id === department.departmentBoss)
+          if (user._id === membre.membreBoss)
             return (
               <Link
-                to={`/departmentinfo/${department._id}`}
+                to={`/membreinfo/${membre._id}`}
                 style={{ color: "inherit" }}
                 className="goToClubPage"
               >
                 <div className="formCardDep">
-                  <div className="cleanCartDep">
+                  <div className="cleanCartMembre">
                     <div className="circular--landscape">
                       <img
                         class="circular--clubs"
@@ -26,14 +25,10 @@ const CardDepartment = ({ department, clublist, idC }) => {
                         alt="user-pic"
                       />
                     </div>
-                    <div className="departmentName">
-                      {department.departmentDescription}
-                    </div>
 
-                    <div className="bossName">
+                    <div className="bossNameMembre">
                       {user.userLastName} {user.userName}{" "}
                     </div>
-                    <div>{department.departmentMember.length} membre(s)</div>
                   </div>
                 </div>
               </Link>
@@ -43,5 +38,4 @@ const CardDepartment = ({ department, clublist, idC }) => {
   );
 };
 
-export default CardDepartment;
-// departmentBoss
+export default CardMembre;

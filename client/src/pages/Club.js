@@ -175,10 +175,11 @@ const Club = (props) => {
             <div className="leftCont">
               <div className="image-up">
                 <img
-                  id="blah"
-                  className="profilIMG"
+                  class="circular--club"
                   src={clublist.clubPicture}
+                  alt="user-pic"
                 />
+
                 <div className="ModifierPhoto">
                   <label htmlFor="imgInp" className="imgInp">
                     modifier l'image

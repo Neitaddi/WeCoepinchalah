@@ -7,21 +7,31 @@ import ModelFollowing from "./ModelFollowing";
 import ModelFollowers from "./ModelFollowers";
 import ModelUserClubs from "./ModelUserClubs";
 import { getClubs } from "../../js/actions/clubActions";
+import { getDepartments } from "../../js/actions/departementActions";
 import PropTypes from "prop-types";
 
 const NavMiddleProfil = (props) => {
   const usersData = useSelector((state) => state.usersReducer);
   const userData = useSelector((state) => state.userReducer);
   const [clublist, setClublist] = useState(props.clubs);
+  const [department, setDepartment] = useState(props.departments);
   useEffect(() => {
     props.getClubs().then(() => {});
+    props.getDepartments().then(() => {});
   }, []);
   useEffect(() => {
     if (props.clubs) {
       setClublist(props.clubs);
     }
   }, [props.clubs]);
+
   console.log("lista", clublist);
+  useEffect(() => {
+    if (props.departments) {
+      setDepartment(props.departments);
+    }
+  }, [props.departments]);
+  console.log("departmentP", department);
   //useState ModelFollowing
   const [showModelFollowing, setShowModelFollowing] = useState(false);
   //reff openModelFollowing
@@ -81,11 +91,11 @@ const NavMiddleProfil = (props) => {
 
       <div className="flow">
         {" "}
-        <div className="followwing" onClick={openModelFollowing}>
-          Abonnements: {userData.userFollowing && userData.userFollowing.length}
+        <div className="userClubss" onClick={openModelFollowing}>
+          Chéf département dans..
         </div>
-        <div className="followers" onClick={openModelFollowers}>
-          Abonnés: {userData.userFollowers && userData.userFollowers.length}
+        <div className="userClubss" onClick={openModelFollowers}>
+          Membre dans ..
         </div>
       </div>
 
@@ -97,9 +107,13 @@ const NavMiddleProfil = (props) => {
 };
 NavMiddleProfil.propTypes = {
   getClubs: PropTypes.func,
+  getDepartments: PropTypes.func,
 };
 const mapStateToProps = (state) => ({
   clubs: state.clubs.clubs,
+  departments: state.departments.departments,
 });
 
-export default connect(mapStateToProps, { getClubs })(NavMiddleProfil);
+export default connect(mapStateToProps, { getClubs, getDepartments })(
+  NavMiddleProfil
+);
