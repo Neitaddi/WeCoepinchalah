@@ -369,7 +369,13 @@ const Club = (props) => {
             <div className="leftCont">
               <div className="image-up">
                 <label htmlFor="imgInp" />
-                <img id="blah" src={clublist.clubPicture} />
+                <div className="circular--landscape">
+                  <img
+                    class="circular--clubs"
+                    src={clublist.clubPicture}
+                    alt="user-pic"
+                  />
+                </div>
               </div>
               <div className="clubName">{clublist.clubName}</div>
             </div>

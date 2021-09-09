@@ -9,6 +9,7 @@ const postRouters = require("./routes/postRouters");
 const clubRouters = require("./routes/clubRouters");
 const departmentRouters = require("./routes/departmentRouters");
 const membreRouters = require("./routes/membreRouters");
+const tacheRouters = require("./routes/tacheRouters");
 
 //require dotenv
 require("dotenv").config({ path: "./config/.env" });
@@ -58,8 +59,10 @@ app.use("/api/post", postRouters);
 app.use("/api/club", clubRouters);
 //department routers
 app.use("/api/department", departmentRouters);
-//department routers
+//membre routers
 app.use("/api/membre", membreRouters);
+//tache routers
+app.use("/api/tache", tacheRouters);
 
 //lanch server
 app.listen(process.env.PORT, (error) =>

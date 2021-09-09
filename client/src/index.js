@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import store from "./js/store/store";
 import reportWebVitals from "./reportWebVitals";
 import { getUsers } from "./js/actions/usersActions";
+import "bootstrap/dist/css/bootstrap.css";
 
 ReactDOM.render(
   //naadilo store ka props

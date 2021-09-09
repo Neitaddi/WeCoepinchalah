@@ -7,6 +7,7 @@ import postsReducer from "./postsReducer";
 import errorReducer from "./errorReducer";
 import departmentsReducer from "./departmentsReducer";
 import membresReducer from "./membreReducer";
+import tacheReducer from "./tacheReducer";
 export default combineReducers({
   postes: postsReducer,
   usersReducer,
@@ -16,4 +17,5 @@ export default combineReducers({
   clubs: clubsReducer,
   departments: departmentsReducer,
   membres: membresReducer,
+  taches: tacheReducer,
 });

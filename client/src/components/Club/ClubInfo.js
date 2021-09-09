@@ -57,7 +57,13 @@ const ClubInfo = (props) => {
           <div className="cadrePhoto">
             <div className="image-up">
               <label htmlFor="imgInp" />
-              <img id="blah" src={clublist.clubPicture} />
+              <div className="circular--landscape">
+                <img
+                  class="circular--clubs"
+                  src={clublist.clubPicture}
+                  alt="user-pic"
+                />
+              </div>
             </div>
             <div className="clubNameInfo">{clublist.clubName}</div>
           </div>
@@ -94,21 +100,16 @@ const ClubInfo = (props) => {
             </ul>
           </nav>
         </div>
-        <div role="main" className="navMiddleCb">
-          {" "}
-          {/* <div role="main" className="topCb">
-            {" "}
-          </div> */}
-          <div role="main" className="buttomCb">
-            <div>
-              {usersData.map((user) => {
-                if (clublist.createrId === user._id)
-                  return (
-                    <CardClubInfo user={user} clublist={clublist} idC={idC} />
-                  );
-              })}
-            </div>{" "}
-          </div>
+
+        <div role="main" className="BottomRightDepartmentt">
+          <div>
+            {usersData.map((user) => {
+              if (clublist.createrId === user._id)
+                return (
+                  <CardClubInfo user={user} clublist={clublist} idC={idC} />
+                );
+            })}
+          </div>{" "}
         </div>
       </div>
     </div>

@@ -1,0 +1,48 @@
+.dateTache {
+  font-size: 10px;
+}
+.page-link:hover {
+  cursor: pointer;
+}
+.page-link {
+  cursor: pointer;
+  background-color: lightcoral;
+}
+.inputSearchTache {
+  margin-bottom: 12px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  width: 40%;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-color: #dbdbdb;
+  border-style: solid;
+}
+.inputSearchTache:focus {
+  outline: none;
+}
+.inputSearchTache:hover {
+  border-color: #ea5652;
+  border-style: solid;
+}
+.topTache {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  align-content: center;
+  margin-top: 10px;
+}
+.d-flex {
+  display: flex;
+  background-color: #ececec;
+  border-radius: 20px;
+  height: 50px;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding-top: 5px;
+}
+.teteTache {
+  margin-right: 650px;
+}

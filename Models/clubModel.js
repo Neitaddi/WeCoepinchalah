@@ -55,7 +55,12 @@ const clubSchema = new mongoose.Schema(
         ref: "post",
       },
     ],
-    clubDepartments: { type: [String] },
+    clubDepartments: {
+      type: [String],
+    },
+    clubTaches: {
+      type: [String],
+    },
   },
 
   {
@@ -63,4 +68,5 @@ const clubSchema = new mongoose.Schema(
   }
 );
 
-module.exports = clubModel = mongoose.model("club", clubSchema);
+const clubModel = mongoose.model("club", clubSchema);
+module.exports = clubModel;
